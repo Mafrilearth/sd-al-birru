@@ -138,6 +138,9 @@ const schoolStructuredData = {
 
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 export default function PublicRootLayout({
   children,
 }: {
@@ -155,7 +158,7 @@ export default function PublicRootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schoolStructuredData) }}
         />
       </head>
- <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-amber-500 selection:text-slate-950 font-sans relative">
+      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-amber-500 selection:text-slate-950 font-sans relative">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -165,7 +168,7 @@ export default function PublicRootLayout({
           {/* Skip to Content for Keyboard Accessibility */}
           <a
             href="#main-content"
- className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-amber-500 focus:text-slate-950 focus:font-bold focus:rounded-xl focus:shadow-lg focus:outline-none"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-amber-500 focus:text-slate-950 focus:font-bold focus:rounded-xl focus:shadow-lg focus:outline-none"
           >
             Menuju ke Konten Utama
           </a>
@@ -179,6 +182,10 @@ export default function PublicRootLayout({
           <FloatingWhatsApp />
           <ScrollToTop />
           <MobileLiquidDock />
+          
+          {/* Vercel Observability Zero-Config */}
+          <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
