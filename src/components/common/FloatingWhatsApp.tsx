@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
@@ -23,7 +23,7 @@ export function FloatingWhatsApp() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 10 }}
           transition={appleSpringSnappy}
-          className="relative flex items-center gap-2 rounded-2xl liquid-glass-regular specular-rim p-3 pr-2.5 shadow-xl text-xs text-slate-800 dark:text-slate-200 max-w-[230px]"
+          className="relative flex items-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 pr-2.5 shadow-xl text-xs text-slate-800 dark:text-slate-200 max-w-[230px]"
         >
           <span className="flex size-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
           <p className="font-medium leading-tight">

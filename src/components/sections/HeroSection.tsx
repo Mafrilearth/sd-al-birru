@@ -100,7 +100,7 @@ export function HeroSection() {
               speed={0.35}
               className="absolute -top-6 -right-4 z-30 hidden sm:block"
             >
-              <aside aria-label="Status Akreditasi" className="flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-dark specular-rim text-white text-[11px] font-mono font-bold tracking-wider shadow-xl">
+              <aside aria-label="Status Akreditasi" className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-slate-800 border border-slate-700 text-white text-[11px] font-mono font-bold tracking-wider shadow-xl">
                 <ShieldCheck className="size-3.5 text-emerald-400" />
                 <span>NPSN // AKREDITASI RESMI</span>
               </aside>
@@ -111,7 +111,7 @@ export function HeroSection() {
               speed={-0.25}
               className="absolute -bottom-6 -left-4 z-30 hidden sm:block"
             >
-              <aside aria-label="Target Tahfidz" className="flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-regular specular-rim text-slate-900 dark:text-slate-50 text-[11px] font-mono font-bold tracking-wider shadow-lg">
+              <aside aria-label="Target Tahfidz" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-50 text-[11px] font-mono font-bold tracking-wider shadow-lg">
                 <Award className="size-3.5 text-amber-500" />
                 <span>3 JUZ TALAQQI BERSANAD</span>
               </aside>

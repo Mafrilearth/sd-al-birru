@@ -52,7 +52,7 @@ export function MobileLiquidDock() {
     >
       <nav
         aria-label="Bilah Aksi Cepat"
-        className="pointer-events-auto liquid-glass-regular specular-rim concentric-dock p-1.5 flex items-center justify-between gap-1 shadow-2xl transition-all"
+        className="pointer-events-auto bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/50 concentric-dock p-1.5 flex items-center justify-between gap-1 shadow-2xl transition-all"
       >
         {dockItems.map((item) => {
           const Icon = item.icon;

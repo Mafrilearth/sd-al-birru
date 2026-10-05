@@ -55,10 +55,10 @@ export function PublicNavbar() {
     <header className="sticky top-0 sm:top-2 z-50 w-full transition-all duration-300 px-3 sm:px-6 lg:px-8 py-2">
       <div
         className={cn(
-          "max-w-7xl mx-auto rounded-2xl sm:rounded-full px-3.5 sm:px-5 py-2.5 flex items-center justify-between transition-all duration-300 specular-rim",
+          "max-w-7xl mx-auto rounded-2xl sm:rounded-full px-3.5 sm:px-5 py-2.5 flex items-center justify-between transition-all duration-300",
           isScrolled
-            ? "liquid-glass-scrolled shadow-xl"
-            : "liquid-glass-regular shadow-md"
+            ? "bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-sm border border-slate-200/50 dark:border-slate-800/50"
+            : "bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xs"
         )}
       >
         {/* Brand Logo Identity */}

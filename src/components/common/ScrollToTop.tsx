@@ -36,7 +36,7 @@ export function ScrollToTop() {
           transition={appleSpring}
           onClick={scrollToTop}
           aria-label="Kembali ke atas halaman"
-          className="fixed bottom-22 lg:bottom-6 left-4 sm:left-6 z-40 flex size-11 items-center justify-center rounded-full liquid-glass-regular specular-rim text-slate-700 dark:text-slate-300 shadow-lg hover:bg-slate-950 hover:text-amber-400 transition-colors cursor-pointer"
+          className="fixed bottom-22 lg:bottom-6 left-4 sm:left-6 z-40 flex size-11 items-center justify-center rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 shadow-lg hover:bg-slate-950 dark:hover:bg-slate-800 hover:text-amber-400 dark:hover:text-amber-400 transition-colors cursor-pointer"
         >
           <ArrowUp className="size-4.5" />
         </motion.button>
