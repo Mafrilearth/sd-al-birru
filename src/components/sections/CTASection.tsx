@@ -6,6 +6,7 @@ import { MessageCircle, ArrowRight, ShieldCheck } from "lucide-react";
 import { motion } from "motion/react";
 import { ScrollReveal } from "@/components/common/ScrollReveal";
 import { BorderBeam } from "@/components/common/BorderBeam";
+import { Button } from "@/components/ui/button";
 
 export interface CTASectionProps {
   kicker?: string;
@@ -57,23 +58,23 @@ export function CTASection({
 
               {/* CTAs with generous touch targets & accessible contrast */}
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                <Link
-                  href={primaryBtnHref}
- className="w-full sm:w-auto flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 h-13 rounded-none shadow-xs transition-all hover:scale-[1.01] active:scale-[0.99] text-base focus-visible:ring-4 focus-visible:ring-amber-400/40 outline-none group"
-                >
-                  <span>{primaryBtnText}</span>
-                  <ArrowRight aria-hidden="true" className="size-4.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                <Button asChild className="w-full sm:w-auto flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 h-13 rounded-none shadow-xs transition-all text-base group">
+                  <Link href={primaryBtnHref}>
+                    <span>{primaryBtnText}</span>
+                    <ArrowRight aria-hidden="true" className="size-4.5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
 
-                <a
-                  href="https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20SD%20Al-Birru,%20saya%20ingin%20konsultasi%20PPDB%20Tahun%20Ajaran%202026/2027."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-700 bg-slate-900 hover:bg-slate-850 text-slate-100 font-semibold px-7 h-13 rounded-none transition-all hover:scale-[1.01] active:scale-[0.99] text-base focus-visible:ring-4 focus-visible:ring-slate-700 outline-none group"
-                >
-                  <MessageCircle aria-hidden="true" className="size-5 text-emerald-400 group-hover:scale-110 transition-transform" />
-                  <span>Chat WhatsApp School</span>
-                </a>
+                <Button asChild variant="outline" className="w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-100 font-semibold px-7 h-13 rounded-none transition-all text-base group">
+                  <a
+                    href="https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20SD%20Al-Birru,%20saya%20ingin%20konsultasi%20PPDB%20Tahun%20Ajaran%202026/2027."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MessageCircle aria-hidden="true" className="size-5 text-emerald-400 group-hover:scale-110 transition-transform" />
+                    <span>Chat WhatsApp School</span>
+                  </a>
+                </Button>
               </div>
 
               <div className="mt-10 flex items-center justify-center gap-2 text-xs text-slate-400 font-mono">

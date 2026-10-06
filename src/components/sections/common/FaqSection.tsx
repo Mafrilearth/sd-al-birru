@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { ChevronDown, MessageCircle, Phone, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { ScrollReveal } from "@/components/common/ScrollReveal";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
 interface FaqItem {
@@ -50,14 +51,7 @@ const faqs: FaqItem[] = [
       "Observasi dirancang dengan pendekatan ramah anak (child-friendly assessment) melalui kegiatan bermain edukatif terarah untuk memetakan kesiapan motorik, kemandirian emosional, dan interaksi sosial anak. Kami tidak memberlakukan tes calistung kaku sebagai penentu kelulusan, dan menyertakan sesi dialog kemitraan bersama orang tua demi penyelarasan visi di rumah dan school.",
   },
 ];
-
 export function FaqSection() {
-  const [openId, setOpenId] = useState<string | null>("faq-hours");
-
-  const toggleFaq = (id: string) => {
-    setOpenId((prev) => (prev === id ? null : id));
-  };
-
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -78,9 +72,9 @@ export function FaqSection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Golden Ratio 12-Column Division: col-span-5 (~41.7%) and col-span-7 (~58.3%) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Industrial Overview & Direct Humas Reassurance (Golden Ratio Minor 5/12) */}
+          
+          {/* Left Column */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
             <ScrollReveal direction="up" delay={0.1}>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold tracking-wider text-slate-800 dark:text-slate-200 uppercase mb-6">
@@ -97,7 +91,6 @@ export function FaqSection() {
                 armada antar-jemput, dan tata cara observasi masuk ramah anak di SD Al-Birru.
               </p>
 
-              {/* Direct Support Box - Strict 8pt Grid (p-8 = 32px, rounded-none = 24px) */}
               <aside aria-labelledby="faq-support-title" className="mt-8">
                 <motion.div
                   whileHover={{ y: -2, transition: { duration: 0.2 } }}
@@ -116,10 +109,10 @@ export function FaqSection() {
 
                   <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
                     <a
-                      href="https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20SD%20Al-Birru,%20saya%20ingin%20konsultasi%20seputar%20operasional%20sekolah."
+                      href="https://wa.me/6281234567890"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-6 h-12 rounded-none bg-emerald-700 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm transition-all shadow-md shadow-emerald-900/30 active:scale-95 min-h-[48px]"
+                      className="flex items-center justify-center gap-2 px-6 h-12 rounded-none bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs sm:text-sm transition-all shadow-md shadow-emerald-900/30 active:scale-95 min-h-[48px]"
                     >
                       <MessageCircle className="size-4.5" />
                       <span>Chat Langsung ke Tim Humas (WA)</span>
@@ -138,101 +131,38 @@ export function FaqSection() {
             </ScrollReveal>
           </div>
 
-          {/* Right Column: W3C WAI-ARIA Standard Semantic Accordion List */}
+          {/* Right Column: Shadcn Accordion List */}
           <div className="lg:col-span-7">
-            <ul className="grid grid-cols-1 bg-slate-200 dark:bg-slate-800 gap-[1px] border border-slate-200 dark:border-slate-800 relative">
+            <div className="bg-slate-200 dark:bg-slate-800 p-[1px] relative">
               {/* Crosshairs */}
               <div className="absolute -top-1.5 -left-1.5 size-3 border border-amber-500 z-10 bg-white dark:bg-slate-950" />
               <div className="absolute -top-1.5 -right-1.5 size-3 border border-amber-500 z-10 bg-white dark:bg-slate-950" />
               <div className="absolute -bottom-1.5 -left-1.5 size-3 border border-amber-500 z-10 bg-white dark:bg-slate-950" />
               <div className="absolute -bottom-1.5 -right-1.5 size-3 border border-amber-500 z-10 bg-white dark:bg-slate-950" />
 
-              {faqs.map((faq, idx) => {
-                const isOpen = openId === faq.id;
-                return (
-                  <motion.li
-                    key={faq.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{
-                      duration: 0.5,
-                      delay: idx * 0.08,
-                      ease: [0.21, 0.47, 0.32, 0.98],
-                    }}
-                    className={cn(
-                      "rounded-none transition-colors duration-200 overflow-hidden list-none",
-                      isOpen
-                        ? "bg-white dark:bg-slate-900"
-                        : "bg-[#FDFDFB] hover:bg-slate-50 dark:hover:bg-slate-900/50 dark:bg-slate-950"
-                    )}
-                  >
-                    <h3 className="m-0 p-0 text-base sm:text-lg font-bold text-slate-950 dark:text-slate-50">
-                      <button
-                        id={`faq-btn-${faq.id}`}
-                        type="button"
-                        aria-controls={`faq-panel-${faq.id}`}
-                        aria-expanded={isOpen}
-                        onClick={() => toggleFaq(faq.id)}
-                        className="w-full flex items-start justify-between gap-4 p-6 sm:p-8 text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 rounded-none min-h-[56px]"
-                      >
-                        <span className="flex items-start gap-4 sm:gap-5">
-                          {/* Monospace Numeric Indicator with Concentric Pill */}
-                          <span
-                            className={cn(
-                              "font-mono text-xs font-bold px-3 py-1.5 rounded-none shrink-0 transition-colors border",
-                              isOpen
-                                ? "bg-slate-950 text-amber-400 border-slate-950"
-                                : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700"
-                            )}
-                          >
-                            {faq.num}
-                          </span>
-                          <span className="leading-snug text-slate-950 dark:text-slate-50 pt-0.5">{faq.question}</span>
+              <Accordion type="single" collapsible defaultValue="faq-hours" className="bg-[#FDFDFB] dark:bg-slate-950 w-full space-y-[1px]">
+                {faqs.map((faq) => (
+                  <AccordionItem key={faq.id} value={faq.id} className="border-0 bg-white dark:bg-slate-900">
+                    <AccordionTrigger className="w-full flex items-start justify-between gap-4 p-6 sm:p-8 hover:no-underline group data-open:bg-white dark:data-open:bg-slate-900 bg-[#FDFDFB] dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
+                      <span className="flex items-start gap-4 sm:gap-5 text-left">
+                        <span className="font-mono text-xs font-bold px-3 py-1.5 rounded-none shrink-0 transition-colors border group-data-open:bg-slate-950 group-data-open:text-amber-400 group-data-open:border-slate-950 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700">
+                          {faq.num}
                         </span>
-
-                        <span
-                          className={cn(
-                            "size-10 rounded-none flex items-center justify-center shrink-0 transition-colors",
-                            isOpen
-                              ? "bg-amber-500/10 text-amber-700"
-                              : "bg-slate-100 text-slate-400"
-                          )}
-                        >
-                          <ChevronDown
-                            className={cn(
-                              "size-5 transition-transform duration-300",
-                              isOpen && "rotate-180 text-amber-600"
-                            )}
-                          />
-                        </span>
-                      </button>
-                    </h3>
-
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          id={`faq-panel-${faq.id}`}
-                          role="region"
-                          aria-labelledby={`faq-btn-${faq.id}`}
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-                          className="overflow-hidden"
-                        >
-                          <div className="px-6 sm:px-8 pb-8 pt-2 text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-800">
-                            <div className="sm:pl-14">
-                              <p>{faq.answer}</p>
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.li>
-                );
-              })}
-            </ul>
+                        <span className="leading-snug text-base sm:text-lg text-slate-950 dark:text-slate-50 pt-0.5">{faq.question}</span>
+                      </span>
+                    </AccordionTrigger>
+                    
+                    <AccordionContent className="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+                      <div className="px-6 sm:px-8 py-6 text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+                        <div className="sm:pl-14">
+                          <p>{faq.answer}</p>
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </div>
       </div>
