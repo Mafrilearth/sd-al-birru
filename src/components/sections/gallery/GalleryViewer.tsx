@@ -28,7 +28,7 @@ const categories = [
   { id: "tahfidz", label: "Tahfidzul Qur'an" },
   { id: "kegiatan", label: "Kegiatan & Ekskul" },
   { id: "prestasi", label: "Wisuda & Prestasi" },
-  { id: "fasilitas", label: "Fasilitas Kampus" },
+  { id: "fasilitas", label: "Facilities Kampus" },
 ];
 
 export function GalleryViewer({ items }: GalleryViewerProps) {
@@ -56,14 +56,14 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
   return (
     <div className="space-y-16">
       <h2 id="gallery-grid-heading" className="sr-only">
-        Koleksi Foto &amp; Dokumentasi Pembiasaan Santri
+        Koleksi Foto &amp; Dokumentasi Pembiasaan Students
       </h2>
 
       {/* Category Filter Pills with Sliding Spring layoutId */}
       <div
         role="toolbar"
-        aria-label="Filter Kategori Galeri"
-        className="flex flex-wrap items-center justify-center gap-2.5 p-2 rounded-2xl bg-slate-100/90 border border-slate-200/80 dark:border-slate-700/80 max-w-fit mx-auto"
+        aria-label="Filter Kategori Gallery"
+        className="flex flex-wrap items-center justify-center gap-2.5 p-2 rounded-none bg-slate-100/90 border border-slate-200/80 dark:border-slate-700/80 max-w-fit mx-auto"
       >
         {categories.map((cat) => {
           const isActive = selectedCategory === cat.id;
@@ -73,7 +73,7 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
               type="button"
               onClick={() => setSelectedCategory(cat.id)}
               className={cn(
-                "relative px-4 py-2.5 rounded-xl text-xs font-bold transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-amber-500 font-mono",
+                "relative px-4 py-2.5 rounded-none text-xs font-bold transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-amber-500 font-mono",
                 isActive ? "text-slate-950 dark:text-slate-50 font-bold" : "text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-slate-50"
               )}
             >
@@ -81,7 +81,7 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
                 <motion.div
                   layoutId="active-gallery-pill"
                   transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                  className="absolute inset-0 rounded-xl bg-white dark:bg-slate-900 shadow-2xs border border-slate-200/80 dark:border-slate-700/80"
+                  className="absolute inset-0 rounded-none bg-white dark:bg-slate-900 shadow-2xs border border-slate-200/80 dark:border-slate-700/80"
                 />
               )}
               <span className="relative z-10">{cat.label}</span>
@@ -93,7 +93,7 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
       {/* Semantic Gallery Grid with Spotlight Cards & Layout Animation */}
       <motion.ul
         layout
-        aria-label="Daftar Foto Dokumentasi"
+        aria-label="Register Foto Dokumentasi"
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 list-none p-0"
         role="list"
       >
@@ -123,18 +123,18 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
                       setActiveItem(item);
                     }
                   }}
-                  className="cursor-pointer outline-none focus-visible:ring-4 focus-visible:ring-amber-500/30 rounded-3xl flex-1 flex"
+                  className="cursor-pointer outline-none focus-visible:ring-4 focus-visible:ring-amber-500/30 rounded-none flex-1 flex"
                 >
                   <SpotlightCard
                     spotlightColor="rgba(245, 158, 11, 0.08)"
-                    className="bg-[#FDFDFB] dark:bg-slate-950 hover:bg-white dark:hover:bg-slate-700 dark:bg-slate-900 shadow-2xs hover:shadow-xl transition-all flex-1 flex flex-col justify-between group rounded-3xl"
+                    className="bg-[#FDFDFB] dark:bg-slate-950 hover:bg-white dark:hover:bg-slate-700 dark:bg-slate-900 shadow-2xs hover:shadow-xl transition-all flex-1 flex flex-col justify-between group rounded-none"
                   >
                     <div>
                       {/* Minimalist Image Placeholder Canvas */}
                       <figure className="relative aspect-[16/10] bg-slate-100 border-b border-slate-200/80 dark:border-slate-700/80 p-8 flex flex-col items-center justify-center text-center group-hover:bg-slate-150 transition-colors overflow-hidden">
                         <div
                           aria-hidden="true"
-                          className="size-16 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs flex items-center justify-center text-slate-400 group-hover:text-amber-600 group-hover:scale-105 transition-all mb-2"
+                          className="size-16 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs flex items-center justify-center text-slate-400 group-hover:text-amber-600 group-hover:scale-105 transition-all mb-2"
                         >
                           <ItemIcon className="size-8" />
                         </div>
@@ -144,7 +144,7 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
 
                         <span
                           aria-hidden="true"
- className="absolute top-4 right-4 flex size-9 items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-500 group-hover:bg-amber-500 group-hover:text-slate-950 dark:hover:text-slate-50 transition-colors shadow-2xs"
+ className="absolute top-4 right-4 flex size-9 items-center justify-center rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-500 group-hover:bg-amber-500 group-hover:text-slate-950 dark:hover:text-slate-50 transition-colors shadow-2xs"
                         >
                           <Maximize2 className="size-4" />
                         </span>
@@ -153,7 +153,7 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
                       {/* Text Description */}
                       <div className="p-7 sm:p-8">
                         <div className="flex items-center justify-between text-xs text-slate-500 mb-3">
-                          <span className="font-semibold text-amber-800 bg-amber-50 px-2.5 py-0.5 rounded-md font-mono border border-amber-200/60">
+                          <span className="font-semibold text-amber-800 bg-amber-50 px-2.5 py-0.5 rounded-none font-mono border border-amber-200/60">
                             {item.categoryLabel}
                           </span>
                           <div className="flex items-center gap-1.5 font-mono">
@@ -206,7 +206,7 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 16 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="relative w-full max-w-lg rounded-3xl bg-white dark:bg-slate-900 p-8 sm:p-10 shadow-2xl border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-50 overflow-hidden"
+              className="relative w-full max-w-lg rounded-none bg-white dark:bg-slate-900 p-8 sm:p-10 shadow-2xl border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-50 overflow-hidden"
             >
               <BorderBeam size={220} duration={10} colorFrom="#f59e0b" colorTo="#10b981" />
 
@@ -214,14 +214,14 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
               <button
                 type="button"
                 onClick={() => setActiveItem(null)}
-                className="absolute top-5 right-5 size-9 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-50 transition-colors focus-visible:ring-2 focus-visible:ring-slate-900 outline-none cursor-pointer z-20"
+                className="absolute top-5 right-5 size-9 rounded-none border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-50 transition-colors focus-visible:ring-2 focus-visible:ring-slate-900 outline-none cursor-pointer z-20"
                 aria-label="Tutup Detail"
               >
                 <X aria-hidden="true" className="size-5" />
               </button>
 
               {/* Modal Image Placeholder */}
-              <figure className="aspect-[16/9] w-full rounded-2xl bg-slate-100 border border-slate-200 dark:border-slate-700 mb-6 flex flex-col items-center justify-center text-slate-400">
+              <figure className="aspect-[16/9] w-full rounded-none bg-slate-100 border border-slate-200 dark:border-slate-700 mb-6 flex flex-col items-center justify-center text-slate-400">
                 <ImageIcon aria-hidden="true" className="size-10 text-slate-300 mb-1" />
                 <figcaption className="text-xs font-bold text-slate-400 uppercase tracking-widest font-mono">
                   Pratinjau Foto Dokumentasi
@@ -229,7 +229,7 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
               </figure>
 
               <div className="flex items-center gap-2 mb-2">
- <span className="px-3 py-1 rounded-md bg-amber-500 text-slate-950 font-mono font-bold text-xs">
+ <span className="px-3 py-1 rounded-none bg-amber-500 text-slate-950 font-mono font-bold text-xs">
                   {activeItem.categoryLabel}
                 </span>
                 <span className="text-xs text-slate-400">•</span>
@@ -242,7 +242,7 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
                 {activeItem.title}
               </h2>
 
-              <div className="mt-4 flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-700 font-mono">
+              <div className="mt-4 flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 p-3 rounded-none border border-slate-200 dark:border-slate-700 font-mono">
                 <MapPin aria-hidden="true" className="size-4 text-amber-600 shrink-0" />
                 <address className="not-italic">Lokasi: {activeItem.location}</address>
               </div>
@@ -253,7 +253,7 @@ export function GalleryViewer({ items }: GalleryViewerProps) {
 
               <footer className="mt-8 pt-5 border-t border-slate-100 dark:border-slate-800 flex items-center gap-2 text-xs text-emerald-700 font-medium font-mono">
                 <CheckCircle2 aria-hidden="true" className="size-4 text-emerald-700 shrink-0" />
-                <span>Dokumentasi resmi pembelajaran santri SD Al-Birru</span>
+                <span>Dokumentasi resmi pembelajaran students SD Al-Birru</span>
               </footer>
             </motion.div>
           </motion.div>

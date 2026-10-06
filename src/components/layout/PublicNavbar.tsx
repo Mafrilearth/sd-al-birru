@@ -1,150 +1,134 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowRight, User } from "lucide-react";
-import { motion } from "motion/react";
 import { BrandLogo } from "@/components/common/BrandLogo";
-import { MobileNavDrawer } from "@/components/layout/MobileNavDrawer";
-import { ThemeToggle } from "@/components/common/ThemeToggle";
-import { appleSpring, appleSpringSnappy, appleTapHaptic } from "@/lib/motion";
+import { LocaleSwitcher } from "@/components/common/LocaleSwitcher";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
+
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 interface NavLinkItem {
   label: string;
   href: string;
+  description?: string;
 }
 
-const navLinks: NavLinkItem[] = [
-  { label: "Beranda", href: "/" },
-  { label: "Profil", href: "/about" },
-  { label: "Program & Kurikulum", href: "/programs" },
-  { label: "Warta", href: "/news" },
-  { label: "Dokumentasi", href: "/gallery" },
-  { label: "Kontak", href: "/contact" },
-];
+
 
 /**
  * PublicNavbar
- * Apple Human Interface Guidelines (HIG) WWDC 2025 Liquid Glass Dynamic Island Header.
- *
- * Rules Adherence:
- * 1. Material Core: .liquid-glass-regular with adaptive luminosity & specular lensing rim.
- * 2. Scroll Edge Effect: Automatically thickens blur to .liquid-glass-scrolled when scrolling.
- * 3. Layering Architecture: Chrome/navigation layer only.
- * 4. Concentric Geometry: Outer capsule (rounded-full) -> inner nav pill container (rounded-full) -> active pill (rounded-full).
- * 5. No Glass on Glass: Active pill is solid opaque high-contrast surface.
- * 6. Spring Physics: Apple WWDC spring tokens { stiffness: 300, damping: 28, mass: 0.8 }.
+ * Utilitarian Grid-aligned Header.
  */
 export function PublicNavbar() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [hoveredPath, setHoveredPath] = useState<string | null>(null);
+  const t = useTranslations("Navigation");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const informasiLinks: NavLinkItem[] = [
+    { label: t("news"), href: "/news", description: "News terbaru dan pengumuman school." },
+    { label: "Gallery", href: "/gallery", description: "Gallery foto kegiatan students." },
+    { label: t("contact"), href: "/contact", description: "Alamat, peta, dan kontak resmi." },
+  ];
 
   return (
-    <header className="sticky top-0 sm:top-2 z-50 w-full transition-all duration-300 px-3 sm:px-6 lg:px-8 py-2">
-      <div
-        className={cn(
-          "max-w-7xl mx-auto rounded-2xl sm:rounded-full px-3.5 sm:px-5 py-2.5 flex items-center justify-between transition-all duration-300",
-          isScrolled
-            ? "bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-sm border border-slate-200/50 dark:border-slate-800/50"
-            : "bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xs"
-        )}
-      >
-        {/* Brand Logo Identity */}
-        <BrandLogo />
+    <header className="sticky top-0 z-50 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+      {/* Ensure the max-w container has the same horizontal padding as GlobalGrid */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* The actual navbar container fills 1280px exactly */}
+        <div className="flex items-stretch h-16 border-x border-slate-200 dark:border-slate-800">
 
-        {/* Desktop Dynamic Island Nav Links with Concentric Capsule & Apple Spring */}
-        <nav
-          aria-label="Navigasi Utama"
-          className="hidden lg:flex items-center gap-1 bg-slate-900/5 dark:bg-white/5 p-1 rounded-full border border-slate-900/5 dark:border-white/5"
-          onMouseLeave={() => setHoveredPath(null)}
-        >
-          {navLinks.map((item) => {
-            const isActive =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
+          {/* Left Section: Brand & Nav Links */}
+          <div className="flex items-stretch divide-x divide-slate-200 dark:divide-slate-800">
+            {/* Logo block: exactly 9 grid blocks (288px) */}
+            <div className="flex items-center w-[288px] pl-8 h-full">
+              <BrandLogo />
+            </div>
 
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                onMouseEnter={() => setHoveredPath(item.href)}
-                className={cn(
-                  "relative px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-colors z-10 select-none",
-                  isActive ? "text-slate-950 dark:text-slate-50 font-bold" : "text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-slate-50"
-                )}
-              >
-                {/* Active Pill with Apple HIG Spring Physics - Solid Contrast (No Glass on Glass) */}
-                {isActive && (
-                  <motion.div
-                    layoutId="navbar-active-pill"
-                    transition={appleSpring}
-                    className="absolute inset-0 bg-white dark:bg-slate-800 rounded-full border border-slate-200/90 dark:border-slate-700 shadow-xs -z-10"
-                  />
-                )}
+            {/* Desktop Nav Links */}
+            <div className="hidden lg:flex items-stretch divide-x divide-slate-200 dark:divide-slate-800">
+              <NavigationMenu className="h-full">
+                <NavigationMenuList className="h-full flex space-x-0">
+                  {/* (Home removed: Logo acts as Home) */}
 
-                {/* Hover Indicator preview */}
-                {hoveredPath === item.href && !isActive && (
-                  <motion.div
-                    layoutId="navbar-hover-pill"
-                    transition={appleSpringSnappy}
-                    className="absolute inset-0 bg-slate-900/5 dark:bg-white/5 rounded-full -z-20"
-                  />
-                )}
+                  {/* Single Link: About */}
+                  <NavigationMenuItem className="h-full border-r border-slate-200 dark:border-slate-800">
+                    <NavigationMenuLink render={
+                      <Link href="/about" className={cn(
+                        "flex items-center justify-center w-[128px] h-full text-[11px] font-bold font-mono uppercase tracking-wider transition-colors select-none rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 outline-none focus:bg-slate-50 dark:focus:bg-slate-900/50",
+                        pathname.startsWith("/about") ? "text-amber-600 dark:text-amber-500 bg-slate-50 dark:bg-slate-900/50" : "text-slate-600 dark:text-slate-400"
+                      )} />
+                    }>
+                      {t("about")}
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
 
-                <span>{item.label}</span>
-              </Link>
-            );
-          })}
-        </nav>
+                  {/* Single Link: Program */}
+                  <NavigationMenuItem className="h-full border-r border-slate-200 dark:border-slate-800">
+                    <NavigationMenuLink render={
+                      <Link href="/programs" className={cn(
+                        "flex items-center justify-center text-center w-[192px] h-full text-[11px] font-bold font-mono uppercase tracking-wider transition-colors select-none rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 outline-none focus:bg-slate-50 dark:focus:bg-slate-900/50",
+                        pathname.startsWith("/programs") ? "text-amber-600 dark:text-amber-500 bg-slate-50 dark:bg-slate-900/50" : "text-slate-600 dark:text-slate-400"
+                      )} />
+                    }>
+                      {t("programs")}
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
 
-        {/* Right Section: Micro-Status, Admin & Primary Action */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          {/* Micro Status Indicator */}
-          <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200/70 dark:border-slate-700/70 bg-white/60 dark:bg-slate-800/60 text-[11px] font-mono text-slate-700 dark:text-slate-300 font-medium">
-            <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>PPDB 2026</span>
+                  {/* Dropdown: Informasi */}
+                  <NavigationMenuItem className="h-full">
+                    <NavigationMenuTrigger className="flex items-center justify-center w-[192px] h-full text-[11px] font-bold font-mono uppercase tracking-wider rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-900/50 border-0 focus:bg-transparent text-slate-600 dark:text-slate-400">
+                      Public Information
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[320px] gap-0 p-0 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-none shadow-xl">
+                        {informasiLinks.map((link) => (
+                          <li key={link.href} className="border-b border-slate-200 dark:border-slate-800 last:border-0">
+                            <NavigationMenuLink render={
+                              <Link
+                                href={link.href}
+                                className="block select-none space-y-1 p-6 leading-none no-underline outline-none transition-colors hover:bg-slate-50 dark:hover:bg-slate-900 focus:bg-slate-50 dark:focus:bg-slate-900"
+                              />
+                            }>
+                              <div className="text-xs font-bold leading-none font-mono text-slate-900 dark:text-slate-100 uppercase tracking-wider">{link.label}</div>
+                              <p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400 font-sans">
+                                {link.description}
+                              </p>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
           </div>
 
-          <ThemeToggle />
+          {/* Right Section: Status, Locale, & CTA */}
+          <div className="flex items-stretch divide-x divide-slate-200 dark:divide-slate-800 border-l border-slate-200 dark:border-slate-800">
+            {/* Locale Switcher */}
+            <LocaleSwitcher />
 
-          {/* Portal Staff Link */}
-          <motion.div whileTap={appleTapHaptic}>
+            {/* CTA */}
             <Link
-              href="/admin"
-              className="hidden sm:flex size-9 items-center justify-center rounded-full border border-slate-200/80 dark:border-slate-700/80 bg-white/70 dark:bg-slate-800/70 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-white dark:hover:bg-slate-700 transition-all shadow-2xs"
-              title="Portal Login Admin & Guru"
-              aria-label="Portal Login Admin & Guru"
+              href="/admissions"
+              className="hidden sm:flex items-center justify-center gap-2 w-[160px] bg-slate-950 dark:bg-amber-500 hover:bg-slate-800 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-bold h-full font-mono uppercase text-xs transition-colors group"
             >
-              <User className="size-4" />
+              <span>{t("admissions")}</span>
+              <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </motion.div>
-
-          {/* High-Contrast Primary CTA Button with Apple Spring Physics */}
-          <motion.div whileTap={appleTapHaptic}>
-            <Link
-              href="/contact#formulir-ppdb"
-              className="hidden sm:inline-flex items-center gap-1.5 bg-slate-950 dark:bg-amber-500 hover:bg-slate-850 dark:hover:bg-amber-400 text-white dark:text-slate-950 font-bold px-4 h-9.5 rounded-full text-xs transition-all shadow-md group"
-            >
-              <span>Daftar PPDB</span>
-              <ArrowRight className="size-3.5 text-amber-400 dark:text-slate-950 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
-
-          {/* Mobile Navigation Drawer Trigger */}
-          <MobileNavDrawer />
+          </div>
         </div>
       </div>
     </header>

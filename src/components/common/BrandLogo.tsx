@@ -11,11 +11,11 @@ export function BrandLogo({ className, isDarkBackground = false }: BrandLogoProp
   return (
     <Link
       href="/"
-      className={cn("group flex items-center gap-3 transition-transform hover:scale-[1.02]", className)}
-      aria-label="Kembali ke Beranda SD Al-Birru"
+      className={cn("group flex items-center gap-4 transition-transform hover:scale-[1.02]", className)}
+      aria-label="Kembali ke Home SD Al-Birru"
     >
-      {/* Official Al-Birru Shield Icon (SVG) */}
-      <div className="relative flex size-11 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 p-0.5 shadow-md shadow-amber-500/20">
+      {/* Official Al-Birru Shield Icon (SVG) - Exact 64px (2 grid blocks) */}
+      <div className="relative flex size-16 items-center justify-center rounded-none bg-amber-500 p-2 shadow-none border-r border-slate-200 dark:border-slate-800">
         <svg
           viewBox="0 0 100 120"
           className="size-full fill-none"

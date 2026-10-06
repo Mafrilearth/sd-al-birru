@@ -17,12 +17,12 @@ interface TrustItem {
 }
 
 const trustItems: TrustItem[] = [
-  { icon: ShieldCheck, label: "KEMENDIKDASMEN RI", sub: "Kurikulum Merdeka Resmi" },
+  { icon: ShieldCheck, label: "KEMENDIKDASMEN RI", sub: "Curriculum Merdeka Resmi" },
   { icon: Award, label: "KEMENAG SUKABUMI", sub: "Bimbingan Tahfidz Al-Qur'an" },
-  { icon: BookOpen, label: "JSIT INDONESIA", sub: "Jaringan Sekolah Islam Terpadu" },
+  { icon: BookOpen, label: "JSIT INDONESIA", sub: "Jaringan School Islam Terpadu" },
   { icon: Compass, label: "SANAD TAHFIDZ", sub: "Talaqqi Riwayat Hafs Bersanad" },
   { icon: CheckCircle2, label: "BAN-S/M JABAR", sub: "Standar Mutu Terakreditasi" },
-  { icon: HeartHandshake, label: "PARENTING SAHABAT ANAK", sub: "Kemitraan Positif Rumah & Sekolah" },
+  { icon: HeartHandshake, label: "PARENTING SAHABAT ANAK", sub: "Kemitraan Positif Rumah & School" },
 ];
 
 export function TrustPartnerMarquee() {
@@ -47,7 +47,7 @@ export function TrustPartnerMarquee() {
               key={`track-1-${idx}`}
               className="flex items-center gap-3.5 shrink-0 text-slate-700 dark:text-slate-300 opacity-80 hover:opacity-100 transition-opacity cursor-default"
             >
-              <div className="size-9 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center text-slate-700 dark:text-slate-300 shrink-0 shadow-2xs">
+              <div className="size-9 rounded-none bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center text-slate-700 dark:text-slate-300 shrink-0 shadow-2xs">
                 <Icon className="size-4.5 text-amber-600" />
               </div>
               <div className="text-left font-mono">
@@ -70,7 +70,7 @@ export function TrustPartnerMarquee() {
               key={`track-2-${idx}`}
               className="flex items-center gap-3.5 shrink-0 text-slate-700 dark:text-slate-300 opacity-80 hover:opacity-100 transition-opacity cursor-default"
             >
-              <div className="size-9 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center text-slate-700 dark:text-slate-300 shrink-0 shadow-2xs">
+              <div className="size-9 rounded-none bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center text-slate-700 dark:text-slate-300 shrink-0 shadow-2xs">
                 <Icon className="size-4.5 text-amber-600" />
               </div>
               <div className="text-left font-mono">

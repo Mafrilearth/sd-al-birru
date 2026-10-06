@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/validations/contact";
-import configPromise from "@/payload.config";
-import { getPayload } from "payload";
 
 export async function POST(request: Request) {
   try {
@@ -20,24 +18,8 @@ export async function POST(request: Request) {
 
     const { fullName, phone, email, studentCandidateName, message } = result.data;
 
-    // Try saving inquiry to Payload CMS database
-    try {
-      const payload = await getPayload({ config: configPromise });
-      await payload.create({
-        collection: "inquiries",
-        data: {
-          fullName,
-          phone,
-          email: email || undefined,
-          studentCandidateName: studentCandidateName || undefined,
-          message,
-          status: "baru",
-        },
-      });
-    } catch (dbError) {
-      // In development or if db is initializing, log warning and still allow parent to proceed
-      console.warn("Payload DB save warning (proceeding to WhatsApp):", dbError);
-    }
+    // TODO: Replace with custom Drizzle ORM implementation later
+    console.log("Mock saving inquiry to DB", { fullName, phone, email });
 
     // Build personalized WhatsApp pre-filled link
     const waPhone = "6281234567890"; // Official School WhatsApp hotline
@@ -45,10 +27,10 @@ export async function POST(request: Request) {
 Nama saya: ${fullName}
 No. WhatsApp: ${phone}${email ? `\nEmail: ${email}` : ""}${studentCandidateName ? `\nNama Calon Ananda: ${studentCandidateName}` : ""}
 
-Pesan Pertanyaan PPDB:
+Pesan Pertanyaan Admissions:
 "${message}"
 
-Mohon informasi lebih lanjut mengenai pendaftaran dan jadwal survei sekolah. Terima kasih.`;
+Mohon informasi lebih lanjut mengenai registration dan jadwal survei school. Terima kasih.`;
 
     const encodedText = encodeURIComponent(greetingText);
     const whatsappUrl = `https://wa.me/${waPhone}?text=${encodedText}`;

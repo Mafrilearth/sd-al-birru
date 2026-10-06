@@ -27,9 +27,9 @@ export function HistoryTimelineSection() {
     {
       year: "2023",
       badge: "FASE 03 // TRANSFORMASI SAINS",
-      title: "Penerapan Kurikulum Merdeka & Lab Digital",
+      title: "Penerapan Curriculum Merdeka & Lab Digital",
       description:
-        "Mengadopsi Kurikulum Merdeka secara penuh, mengintegrasikan metode talaqqi tahfidz bersanad, serta meluncurkan Pojok Literasi Digital & Laboratorium Sains Eksperimen Terapan.",
+        "Mengadopsi Curriculum Merdeka secara penuh, mengintegrasikan metode talaqqi tahfidz bersanad, serta meluncurkan Pojok Literasi Digital & Laboratorium Sains Eksperimen Terapan.",
       icon: BookOpen,
     },
     {
@@ -49,8 +49,8 @@ export function HistoryTimelineSection() {
           {/* Left Column: Meaning of Al-Birru & Quranic Verse */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
             <ScrollReveal direction="up">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold tracking-wider text-slate-800 dark:text-slate-200 uppercase mb-5">
-                <span className="size-1.5 rounded-full bg-amber-500 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold tracking-wider text-slate-800 dark:text-slate-200 uppercase mb-5">
+                <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
                 <span>FILOSOFI // ASAL-USUL NAMA</span>
               </div>
 
@@ -72,7 +72,7 @@ export function HistoryTimelineSection() {
                 <SpotlightCard
                   spotlightColor="rgba(245, 158, 11, 0.1)"
                   borderColor="rgba(245, 158, 11, 0.35)"
-                  className="p-8 bg-white dark:bg-slate-900 border-amber-200/80 shadow-2xs hover:shadow-lg transition-all rounded-3xl"
+                  className="p-8 bg-white dark:bg-slate-900 border-amber-200/80 shadow-2xs hover:shadow-lg transition-all rounded-none"
                 >
                   <cite className="text-[10px] font-mono font-bold text-amber-700 uppercase tracking-widest block mb-4 not-italic">
                     QS. AL-BAQARAH: 177
@@ -114,7 +114,7 @@ export function HistoryTimelineSection() {
                     className="relative group list-none"
                   >
                     {/* Glowing Node on Timeline Axis */}
- <div className="absolute -left-[35px] sm:-left-[51px] top-2 flex size-8 sm:size-9 items-center justify-center rounded-xl bg-slate-950 text-amber-400 font-mono font-bold text-xs shadow-md border border-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 dark:hover:text-slate-50 group-hover:scale-110 transition-all">
+ <div className="absolute -left-[35px] sm:-left-[51px] top-2 flex size-8 sm:size-9 items-center justify-center rounded-none bg-slate-950 text-amber-400 font-mono font-bold text-xs shadow-md border border-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 dark:hover:text-slate-50 group-hover:scale-110 transition-all">
                       <Icon className="size-4" />
                     </div>
 
@@ -122,10 +122,10 @@ export function HistoryTimelineSection() {
                     <article aria-labelledby={`milestone-title-${idx}`}>
                       <SpotlightCard
                         spotlightColor="rgba(245, 158, 11, 0.08)"
-                        className="p-7 sm:p-8 bg-white dark:bg-slate-900 shadow-2xs hover:shadow-lg transition-all rounded-3xl"
+                        className="p-7 sm:p-8 bg-white dark:bg-slate-900 shadow-2xs hover:shadow-lg transition-all rounded-none"
                       >
                         <div className="flex flex-wrap items-center justify-between gap-2 mb-3.5">
-                          <time dateTime={item.year} className="text-xs font-mono font-bold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-md border border-amber-200/60">
+                          <time dateTime={item.year} className="text-xs font-mono font-bold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-none border border-amber-200/60">
                             TAHUN {item.year}
                           </time>
                           <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">

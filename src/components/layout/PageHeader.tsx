@@ -64,11 +64,7 @@ export function PageHeader({
         className
       )}
     >
-      {/* Precision Dot Matrix Watermark */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-[0.035] bg-[radial-gradient(#0f172a_1px,transparent_1px)] [background-size:24px_24px]"
-      />
+      {/* Removed conflicting background dots to allow GlobalGrid to shine clearly */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Monospace Kicker Pill */}
@@ -76,9 +72,9 @@ export function PageHeader({
           initial={{ opacity: 0, scale: 0.95, y: -8 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold tracking-wider text-slate-800 dark:text-slate-200 uppercase mb-6"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold tracking-wider text-slate-800 dark:text-slate-200 uppercase mb-6"
         >
-          <span className="size-1.5 rounded-full bg-amber-500 animate-pulse" />
+          <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
           <span>{kicker}</span>
         </motion.div>
 
@@ -115,7 +111,7 @@ export function PageHeader({
               return (
                 <div
                   key={idx}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/90 shadow-2xs font-medium hover:border-slate-300 dark:border-slate-600 transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-white dark:bg-slate-900 border border-slate-200/90 shadow-2xs font-medium hover:border-slate-300 dark:border-slate-600 transition-colors"
                 >
                   {Icon && <Icon className="size-3.5 text-amber-600 shrink-0" />}
                   <span>{b.label}</span>

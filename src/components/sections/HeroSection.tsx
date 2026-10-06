@@ -10,15 +10,14 @@ import { AnimatedCounter } from "@/components/common/AnimatedCounter";
 import { ParallaxFloatingBadge } from "@/components/common/ParallaxFloatingBadge";
 
 import { appleTapHaptic } from "@/lib/motion";
+import { useTranslations } from "next-intl";
 
 export function HeroSection() {
+  const t = useTranslations("Hero");
+
   return (
     <section aria-labelledby="hero-title" className="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-36 lg:pt-36 lg:pb-44 bg-[#FDFDFB] dark:bg-slate-950 border-b border-slate-200/70">
-      {/* Background Precision Parallax Dot Grid */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-[0.035] bg-[radial-gradient(#0f172a_1px,transparent_1px)] [background-size:24px_24px]"
-      />
+      {/* Removed conflicting background dots to allow GlobalGrid to shine clearly */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
@@ -34,10 +33,10 @@ export function HeroSection() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1, duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold text-slate-800 dark:text-slate-200 tracking-wider uppercase mb-6"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold text-slate-800 dark:text-slate-200 tracking-wider uppercase mb-6"
             >
-              <span className="size-1.5 rounded-full bg-amber-500 animate-pulse" />
-              <span>LEMBAGA PENDIDIKAN DASAR ISLAM TERPADU</span>
+              <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
+              <span>{t("badge")}</span>
             </motion.div>
 
             {/* High-Impact Headline */}
@@ -48,7 +47,7 @@ export function HeroSection() {
               transition={{ delay: 0.15, duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-[58px] font-black text-slate-950 dark:text-slate-50 tracking-tight leading-[1.12]"
             >
-              Pondasi Adab, Hafalan Al-Qur&apos;an, dan Nalar Kritis Sains
+              {t("title1")} <br className="hidden sm:block" /> {t("title2")}
             </motion.h1>
 
             {/* Subheading */}
@@ -58,9 +57,7 @@ export function HeroSection() {
               transition={{ delay: 0.25, duration: 0.6 }}
               className="mt-6 text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl font-normal"
             >
-              SD Al-Birru Sukabumi menyelenggarakan pendidikan dasar holistik yang mengintegrasikan
-              keteladanan adab Islami, pembinaan tahfidz 3 juz bersanad, dan kurikulum merdeka
-              dalam lingkungan sekolah yang sejuk dan ramah anak.
+              {t("description")}
             </motion.p>
 
             {/* Action Buttons with Concentric Capsule & Apple Spring Haptics */}
@@ -73,10 +70,10 @@ export function HeroSection() {
               <motion.div whileTap={appleTapHaptic}>
                 <Link
                   href="/contact"
- className="group flex items-center justify-center gap-2.5 bg-linear-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold px-7 h-13 rounded-full text-sm transition-all shadow-md shadow-amber-500/25 relative overflow-hidden"
+ className="group flex items-center justify-center gap-2.5 bg-linear-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold px-7 h-13 rounded-none text-sm transition-all shadow-md shadow-amber-500/25 relative overflow-hidden"
                 >
                   <Sparkles className="size-4 group-hover:rotate-12 transition-transform" />
-                  <span>Pendaftaran PPDB 2026</span>
+                  <span>{t("cta_primary")}</span>
                   <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
@@ -84,10 +81,10 @@ export function HeroSection() {
               <motion.div whileTap={appleTapHaptic}>
                 <Link
                   href="/programs"
-                  className="flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold px-6 h-13 rounded-full text-sm transition-all shadow-2xs"
+                  className="flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold px-6 h-13 rounded-none text-sm transition-all shadow-2xs"
                 >
                   <BookOpen className="size-4 text-slate-500" />
-                  <span>Rincian Kurikulum</span>
+                  <span>{t("cta_secondary")}</span>
                 </Link>
               </motion.div>
             </motion.div>
@@ -100,7 +97,7 @@ export function HeroSection() {
               speed={0.35}
               className="absolute -top-6 -right-4 z-30 hidden sm:block"
             >
-              <aside aria-label="Status Akreditasi" className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-slate-800 border border-slate-700 text-white text-[11px] font-mono font-bold tracking-wider shadow-xl">
+              <aside aria-label="Status Akreditasi" className="flex items-center gap-2 px-4 py-2 rounded-none bg-slate-900 dark:bg-slate-800 border border-slate-700 text-white text-[11px] font-mono font-bold tracking-wider shadow-xl">
                 <ShieldCheck className="size-3.5 text-emerald-400" />
                 <span>NPSN // AKREDITASI RESMI</span>
               </aside>
@@ -111,7 +108,7 @@ export function HeroSection() {
               speed={-0.25}
               className="absolute -bottom-6 -left-4 z-30 hidden sm:block"
             >
-              <aside aria-label="Target Tahfidz" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-50 text-[11px] font-mono font-bold tracking-wider shadow-lg">
+              <aside aria-label="Target Tahfidz" className="flex items-center gap-2 px-4 py-2 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-50 text-[11px] font-mono font-bold tracking-wider shadow-lg">
                 <Award className="size-3.5 text-amber-500" />
                 <span>3 JUZ TALAQQI BERSANAD</span>
               </aside>
@@ -123,10 +120,10 @@ export function HeroSection() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
             >
-              <SpotlightCard className="p-2 shadow-xs hover:shadow-lg transition-all relative rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+              <SpotlightCard className="p-2 shadow-xs hover:shadow-lg transition-all relative rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
                 <BorderBeam size={220} duration={10} colorFrom="#f59e0b" colorTo="#10b981" />
 
-                <div className="aspect-[4/3] rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 p-6 flex flex-col justify-between relative overflow-hidden group">
+                <div className="aspect-[4/3] rounded-none bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 p-6 flex flex-col justify-between relative overflow-hidden group">
                   {/* Subtle Blueprint Grid */}
                   <div
                     aria-hidden="true"
@@ -137,8 +134,8 @@ export function HeroSection() {
                     <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase font-mono">
                       Arsitektur Kampus
                     </span>
-                    <span className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200/60 font-mono">
-                      <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-none border border-emerald-200/60 font-mono">
+                      <span className="size-1.5 rounded-none bg-emerald-500 animate-pulse" />
                       KAMPUS AKTIF
                     </span>
                   </div>
@@ -146,7 +143,7 @@ export function HeroSection() {
                   <div className="relative z-10 my-auto text-center py-4">
                     <motion.div
                       whileHover={{ rotate: 20, scale: 1.05 }}
-                      className="size-13 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs mx-auto flex items-center justify-center text-slate-400 mb-3 transition-transform cursor-pointer"
+                      className="size-13 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs mx-auto flex items-center justify-center text-slate-400 mb-3 transition-transform cursor-pointer"
                     >
                       <Compass className="size-6 text-slate-700 dark:text-slate-300" />
                     </motion.div>
@@ -160,7 +157,7 @@ export function HeroSection() {
 
                   <div className="relative z-10 pt-3 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-[11px] text-slate-500 font-mono">
                     <span>Status: Terakreditasi Resmi</span>
-                    <span className="font-semibold text-slate-800 dark:text-slate-200">Tahun Ajaran 2026/2027</span>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200">Academic Year 2026/2027</span>
                   </div>
                 </div>
               </SpotlightCard>
@@ -168,47 +165,47 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Semantic Definition List for Tabular Metric Pairs */}
+        {/* Semantic Definition List for Tabular Metric Pairs (Exposed Grid Style) */}
         <motion.dl
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-20 md:mt-28 pt-12 border-t border-slate-200 dark:border-slate-700 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-left"
+          className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 bg-slate-200 dark:bg-slate-800 gap-[1px] border-y border-slate-200 dark:border-slate-800 text-left relative"
         >
-          <div className="md:pr-6 md:border-r border-slate-200 dark:border-slate-700 hover:translate-x-0.5 transition-transform group">
-            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight">
+          <div className="bg-[#FDFDFB] dark:bg-slate-950 p-6 sm:p-8 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors group flex flex-col justify-center">
+            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight group-hover:translate-x-1 transition-transform">
               <AnimatedCounter value={3} suffix=" Juz" />
             </dd>
-            <dt className="text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
+            <dt className="text-[10px] sm:text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
               Target Hafalan Mutqin
             </dt>
           </div>
 
-          <div className="md:px-6 md:border-r border-slate-200 dark:border-slate-700 hover:translate-x-0.5 transition-transform group">
-            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight">
+          <div className="bg-[#FDFDFB] dark:bg-slate-950 p-6 sm:p-8 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors group flex flex-col justify-center">
+            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight group-hover:translate-x-1 transition-transform">
               1 : <AnimatedCounter value={15} />
             </dd>
-            <dt className="text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
+            <dt className="text-[10px] sm:text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
               Rasio Maksimal Kelas
             </dt>
           </div>
 
-          <div className="md:px-6 md:border-r border-slate-200 dark:border-slate-700 hover:translate-x-0.5 transition-transform group">
-            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight">
+          <div className="bg-[#FDFDFB] dark:bg-slate-950 p-6 sm:p-8 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors group flex flex-col justify-center">
+            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight group-hover:translate-x-1 transition-transform">
               <AnimatedCounter value={100} suffix="%" />
             </dd>
-            <dt className="text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
-              Kurikulum Merdeka + Khas
+            <dt className="text-[10px] sm:text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
+              Curriculum Merdeka
             </dt>
           </div>
 
-          <div className="md:pl-6 hover:translate-x-0.5 transition-transform group">
-            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight">
+          <div className="bg-[#FDFDFB] dark:bg-slate-950 p-6 sm:p-8 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors group flex flex-col justify-center">
+            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight group-hover:translate-x-1 transition-transform">
               <AnimatedCounter value={2} suffix=" Rombel" />
             </dd>
-            <dt className="text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
-              Batas Kuota PPDB
+            <dt className="text-[10px] sm:text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
+              Batas Kuota Admissions
             </dt>
           </div>
         </motion.dl>

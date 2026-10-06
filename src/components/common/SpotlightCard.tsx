@@ -37,7 +37,7 @@ export function SpotlightCard({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "group relative rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 transition-all overflow-hidden",
+        "group relative rounded-none border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 transition-all overflow-hidden",
         className
       )}
       {...props}
@@ -45,7 +45,7 @@ export function SpotlightCard({
       {/* Background Spotlight Radial Gradient */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute -inset-px rounded-none opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
             radial-gradient(
@@ -60,7 +60,7 @@ export function SpotlightCard({
       {/* Border Spotlight Glow */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10"
+        className="pointer-events-none absolute -inset-px rounded-none opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10"
         style={{
           border: "1px solid transparent",
           maskImage: useMotionTemplate`

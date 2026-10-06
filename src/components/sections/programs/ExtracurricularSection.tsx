@@ -36,7 +36,7 @@ const extracurriculars: ExtracurricularItem[] = [
     category: "Olahraga Sunnah",
     schedule: "Setiap Sabtu Pagi",
     description:
-      "Melatih konsentrasi, ketenangan emosi, kekuatan postur bahu, dan keselarasan fokus santri sesuai sunnah Rasulullah ﷺ dengan bantalan target panahan standar aman.",
+      "Melatih konsentrasi, ketenangan emosi, kekuatan postur bahu, dan keselarasan fokus students sesuai sunnah Rasulullah ﷺ dengan bantalan target panahan standar aman.",
     icon: Target,
     glow: "rgba(245, 158, 11, 0.12)",
     borderColor: "rgba(245, 158, 11, 0.35)",
@@ -92,7 +92,7 @@ const extracurriculars: ExtracurricularItem[] = [
     category: "Bahasa & Percakapan",
     schedule: "Setiap Senin Sore",
     description:
-      "Membangun rasa percaya diri santri dalam berpidato, mendongeng, dan berdialog santai dalam Bahasa Arab dan Bahasa Inggris sederhana.",
+      "Membangun rasa percaya diri students dalam berpidato, mendongeng, dan berdialog santai dalam Bahasa Arab dan Bahasa Inggris sederhana.",
     icon: Languages,
     glow: "rgba(245, 158, 11, 0.1)",
     borderColor: "rgba(245, 158, 11, 0.35)",
@@ -108,18 +108,18 @@ export function ExtracurricularSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal direction="up" className="max-w-3xl mb-16 md:mb-20 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-slate-800 dark:text-slate-200 text-[11px] font-mono font-bold uppercase tracking-wider mb-5">
-            <span className="size-1.5 rounded-full bg-amber-500 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-slate-800 dark:text-slate-200 text-[11px] font-mono font-bold uppercase tracking-wider mb-5">
+            <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
             <span>PENGEMBANGAN // BAKAT &amp; MINAT SANTRI</span>
           </div>
           <h2
             id="extracurricular-heading"
             className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 dark:text-slate-50 tracking-tight leading-[1.12]"
           >
-            Ekstrakurikuler Pilihan &amp; Olahraga Sunnah
+            Extracurriculars Pilihan &amp; Olahraga Sunnah
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
-            Menumbuhkan ketangkasan fisik, ketajaman konsentrasi, serta kepemimpinan santri
+            Menumbuhkan ketangkasan fisik, ketajaman konsentrasi, serta kepemimpinan students
             di bawah asuhan pelatih dan asatidz berpengalaman.
           </p>
         </ScrollReveal>
@@ -153,7 +153,7 @@ export function ExtracurricularSection() {
                   <SpotlightCard
                     spotlightColor={item.glow}
                     borderColor={item.borderColor}
-                    className="p-8 sm:p-9 bg-white dark:bg-slate-900 shadow-2xs hover:shadow-xl transition-all flex-1 flex flex-col justify-between relative group rounded-3xl"
+                    className="p-8 sm:p-9 bg-white dark:bg-slate-900 shadow-2xs hover:shadow-xl transition-all flex-1 flex flex-col justify-between relative group rounded-none"
                   >
                     {item.featured && (
                       <BorderBeam size={220} duration={12} colorFrom="#f59e0b" colorTo="#10b981" />
@@ -165,7 +165,7 @@ export function ExtracurricularSection() {
                           <span className="font-mono text-[10px] font-bold text-slate-400">
                             {item.code}
                           </span>
-                          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700 dark:text-slate-300 font-mono">
+                          <span className="inline-block px-3 py-1 rounded-none text-[11px] font-semibold bg-slate-100 text-slate-700 dark:text-slate-300 font-mono">
                             {item.category}
                           </span>
                         </div>
@@ -179,7 +179,7 @@ export function ExtracurricularSection() {
                       <div className="flex items-center gap-4 mb-4">
                         <div
                           aria-hidden="true"
-                          className="size-13 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 group-hover:scale-105 transition-transform shadow-2xs"
+                          className="size-13 rounded-none bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 group-hover:scale-105 transition-transform shadow-2xs"
                         >
                           <Icon className="size-6.5" />
                         </div>

@@ -30,16 +30,16 @@ const facilities: FacilityItem[] = [
     title: "Ruang Kelas Representatif & Ber-AC",
     category: "Ruang Belajar",
     description:
-      "Ruang kelas berpendingin udara yang bersih, dilengkapi multimedia proyektor, pencahayaan alami, dan loker pribadi setiap santri.",
+      "Ruang kelas berpendingin udara yang bersih, dilengkapi multimedia proyektor, pencahayaan alami, dan loker pribadi setiap students.",
     icon: Building2,
-    specs: ["Maksimal 20 santri/kelas", "Smart Display & Audio", "Pencahayaan Alami Sehat"],
+    specs: ["Maksimal 20 students/kelas", "Smart Display & Audio", "Pencahayaan Alami Sehat"],
   },
   {
     code: "FAS // 02",
     title: "Masjid & Aula Sholat Berjamaah",
     category: "Pusat Spiritual",
     description:
-      "Tempat pelaksanaan sholat dhuha harian, sholat fardhu berjamaah, dan majelis tasmi' Al-Qur'an santri bersama orang tua.",
+      "Tempat pelaksanaan sholat dhuha harian, sholat fardhu berjamaah, dan majelis tasmi' Al-Qur'an students bersama orang tua.",
     icon: Sun,
     specs: ["Kapasitas 300+ jamaah", "Area wudhu higienis terpisah", "Karpet empuk & penyejuk"],
   },
@@ -75,7 +75,7 @@ const facilities: FacilityItem[] = [
     title: "UKS & Ruang Konseling Ramah Anak",
     category: "Kesehatan & Mental",
     description:
-      "Unit kesehatan sekolah siap tanggap pertolongan pertama bekerja sama dengan faskes terdekat, serta ruang konseling psikologi.",
+      "Unit kesehatan school siap tanggap pertolongan pertama bekerja sama dengan faskes terdekat, serta ruang konseling psikologi.",
     icon: HeartPulse,
     specs: ["Tempat tidur observasi medis", "Obat-obatan darurat lengkap", "Konseling psikolog anak"],
   },
@@ -90,19 +90,19 @@ export function FacilitiesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal direction="up" className="max-w-3xl mb-16 md:mb-20 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-[11px] font-mono font-bold uppercase tracking-wider mb-5">
-            <span className="size-1.5 rounded-full bg-amber-500 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-[11px] font-mono font-bold uppercase tracking-wider mb-5">
+            <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
             <span>SARANA // FASILITAS KAMPUS MODERN</span>
           </div>
           <h2
             id="facilities-heading"
             className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 dark:text-slate-50 tracking-tight leading-[1.12]"
           >
-            Fasilitas Kampus Nyaman, Sejuk &amp; Aman
+            Facilities Kampus Nyaman, Sejuk &amp; Aman
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
             SD Al-Birru menyediakan sarana representatif untuk mendukung kenyamanan belajar,
-            ibadah, dan aktivitas fisik santri.
+            ibadah, dan aktivitas fisik students.
           </p>
         </ScrollReveal>
 
@@ -131,14 +131,14 @@ export function FacilitiesSection() {
                 >
                   <SpotlightCard
                     spotlightColor="rgba(245, 158, 11, 0.08)"
-                    className="p-8 bg-[#FDFDFB] dark:bg-slate-950 hover:bg-white dark:hover:bg-slate-700 dark:bg-slate-900 shadow-2xs hover:shadow-xl transition-all flex-1 flex flex-col justify-between rounded-3xl group"
+                    className="p-8 bg-[#FDFDFB] dark:bg-slate-950 hover:bg-white dark:hover:bg-slate-700 dark:bg-slate-900 shadow-2xs hover:shadow-xl transition-all flex-1 flex flex-col justify-between rounded-none group"
                   >
                     <div>
                       {/* Clean Geometric Image Placeholder with Subtle Zoom */}
-                      <figure className="relative aspect-[16/10] w-full rounded-2xl bg-slate-100 border border-slate-200/80 dark:border-slate-700/80 mb-6 flex flex-col items-center justify-center text-center p-4 group-hover:bg-slate-150 transition-colors overflow-hidden">
+                      <figure className="relative aspect-[16/10] w-full rounded-none bg-slate-100 border border-slate-200/80 dark:border-slate-700/80 mb-6 flex flex-col items-center justify-center text-center p-4 group-hover:bg-slate-150 transition-colors overflow-hidden">
                         <div
                           aria-hidden="true"
-                          className="size-13 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 group-hover:text-amber-600 group-hover:scale-105 transition-all mb-2 shadow-2xs"
+                          className="size-13 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 group-hover:text-amber-600 group-hover:scale-105 transition-all mb-2 shadow-2xs"
                         >
                           <Icon className="size-6.5" />
                         </div>
@@ -148,7 +148,7 @@ export function FacilitiesSection() {
                       </figure>
 
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-md font-mono border border-amber-200/50">
+                        <span className="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-none font-mono border border-amber-200/50">
                           {fac.category}
                         </span>
                         <span className="text-[10px] font-mono text-slate-400 font-bold">

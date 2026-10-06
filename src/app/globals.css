@@ -72,7 +72,7 @@
   --chart-3: oklch(0.556 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 1rem;                            /* 16px - Base 8-point grid anchor (2x 8pt) */
+  --radius: 0rem;                            /* Utilitarian Grid: Strict square corners globally */
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.75 0.18 75);
@@ -115,6 +115,16 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* Hide Scrollbar Globally for a cleaner app-like experience */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }
 
 @layer base {

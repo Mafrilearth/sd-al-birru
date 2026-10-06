@@ -18,7 +18,7 @@ interface FacultyMember {
 const facultyMembers: FacultyMember[] = [
   {
     name: "Ustadz H. Ahmad Fauzi, M.Pd.",
-    role: "Kepala Sekolah",
+    role: "Kepala School",
     degree: "Magister Manajemen Pendidikan Islam (UIN)",
     specialty: "Kepemimpinan Pendidikan & Karakter",
     bio: "Berpengalaman lebih dari 15 tahun membina lembaga pendidikan dasar Islam terpadu dengan fokus fitrah anak.",
@@ -34,23 +34,23 @@ const facultyMembers: FacultyMember[] = [
   },
   {
     name: "Ustadz Rahmat Hidayat, S.Pd.",
-    role: "Koordinator Kurikulum & Sains",
+    role: "Koordinator Curriculum & Sains",
     degree: "S1 Pendidikan Sains & Teknologi (UPI)",
-    specialty: "Kurikulum Merdeka & Inkuiri Sains",
-    bio: "Pengembang modul pembelajaran sains eksperimen terapan dan computational thinking untuk tingkat sekolah dasar.",
+    specialty: "Curriculum Merdeka & Inkuiri Sains",
+    bio: "Pengembang modul pembelajaran sains eksperimen terapan dan computational thinking untuk tingkat school dasar.",
     badgeColor: "bg-sky-50 text-sky-800 border-sky-200",
   },
   {
     name: "Ustadzah Nurul Aini, S.Psi.",
     role: "Koordinator Bimbingan & Karakter",
     degree: "S1 Psikologi Perkembangan Anak",
-    specialty: "Parenting Positif & Konseling Santri",
+    specialty: "Parenting Positif & Konseling Students",
     bio: "Mendampingi pemetaan gaya belajar anak, penanganan hambatan perkembangan, dan konseling orang tua.",
     badgeColor: "bg-purple-50 text-purple-800 border-purple-200",
   },
   {
     name: "Ustadz Muhammad Ilham, S.Pd.I.",
-    role: "Guru Bahasa Arab & Hadits",
+    role: "Teachers Bahasa Arab & Hadits",
     degree: "S1 Pendidikan Bahasa Arab (LIPIA)",
     specialty: "Percakapan Harian Arab & Adab",
     bio: "Mengembangkan metode cerita dan dialog interaktif untuk memperkenalkan adab Rasulullah dengan riang gembira.",
@@ -72,15 +72,15 @@ export function FacultyGridSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal direction="up" className="max-w-3xl mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-[11px] font-mono font-bold uppercase tracking-wider mb-5">
-            <span className="size-1.5 rounded-full bg-amber-500 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-[11px] font-mono font-bold uppercase tracking-wider mb-5">
+            <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
             <span>PENDIDIK // DEWAN ASATIDZ</span>
           </div>
           <h2 id="faculty-heading" className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 dark:text-slate-50 tracking-tight leading-[1.12]">
             Dewan Asatidz &amp; Pengajar Berdedikasi
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
-            Guru di SD Al-Birru adalah teladan hidup (qudwah hasanah) yang mendampingi
+            Teachers di SD Al-Birru adalah teladan hidup (qudwah hasanah) yang mendampingi
             dengan keilmuan, kesabaran, dan ketulusan hati.
           </p>
         </ScrollReveal>
@@ -104,12 +104,12 @@ export function FacultyGridSection() {
               <article aria-labelledby={`teacher-name-${idx}`} className="flex-1 flex">
                 <SpotlightCard
                   spotlightColor="rgba(245, 158, 11, 0.09)"
-                  className="p-7 sm:p-8 bg-[#FDFDFB] dark:bg-slate-950 hover:bg-white dark:hover:bg-slate-700 dark:bg-slate-900 shadow-2xs hover:shadow-xl transition-all flex-1 flex flex-col justify-between rounded-3xl"
+                  className="p-7 sm:p-8 bg-[#FDFDFB] dark:bg-slate-950 hover:bg-white dark:hover:bg-slate-700 dark:bg-slate-900 shadow-2xs hover:shadow-xl transition-all flex-1 flex flex-col justify-between rounded-none"
                 >
                   <div>
                     {/* Photo Placeholder Area with subtle zoom on hover */}
-                    <div className="relative aspect-square w-full rounded-2xl bg-slate-100 border border-slate-200/80 dark:border-slate-700/80 mb-6 flex flex-col items-center justify-center text-center p-4 group-hover:bg-slate-150 transition-colors overflow-hidden">
-                      <div className="size-18 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 group-hover:text-amber-600 group-hover:scale-105 transition-all mb-2 shadow-2xs">
+                    <div className="relative aspect-square w-full rounded-none bg-slate-100 border border-slate-200/80 dark:border-slate-700/80 mb-6 flex flex-col items-center justify-center text-center p-4 group-hover:bg-slate-150 transition-colors overflow-hidden">
+                      <div className="size-18 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 group-hover:text-amber-600 group-hover:scale-105 transition-all mb-2 shadow-2xs">
                         <UserCheck className="size-9" />
                       </div>
                       <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest font-mono">
@@ -118,7 +118,7 @@ export function FacultyGridSection() {
                     </div>
 
                     <span
-                      className={`inline-block px-3 py-1 rounded-full text-xs font-semibold border ${teacher.badgeColor} font-mono`}
+                      className={`inline-block px-3 py-1 rounded-none text-xs font-semibold border ${teacher.badgeColor} font-mono`}
                     >
                       {teacher.role}
                     </span>

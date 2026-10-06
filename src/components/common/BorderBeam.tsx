@@ -20,8 +20,8 @@ export function BorderBeam({
   duration = 12,
   borderWidth = 1.5,
   anchor = 90,
-  colorFrom = "#f59e0b",
-  colorTo = "#10b981",
+  colorFrom = "hsl(var(--foreground) / 0.2)",
+  colorTo = "hsl(var(--foreground) / 0.6)",
   delay = 0,
 }: BorderBeamProps) {
   return (

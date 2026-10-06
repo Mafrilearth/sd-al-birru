@@ -1,0 +1,18 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "programs": "Excellence Programs",
+    "news": "News & Articles",
+    "admissions": "Admissions 2026",
+    "contact": "Contact Us"
+  },
+  "Hero": {
+    "badge": "2026/2027 Admissions Now Open",
+    "title1": "Shaping the Future",
+    "title2": "Qur'anic Generation",
+    "description": "Leading Integrated Islamic Primary School in Sukabumi. Nurturing noble character, certified Qur'an memorization, and critical scientific reasoning.",
+    "cta_primary": "Apply Now",
+    "cta_secondary": "Explore Curriculum"
+  }
+}

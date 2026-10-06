@@ -1,0 +1,18 @@
+{
+  "Navigation": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "programs": "Program Unggulan",
+    "news": "Berita & Artikel",
+    "admissions": "PPDB 2026",
+    "contact": "Hubungi Kami"
+  },
+  "Hero": {
+    "badge": "Pendaftaran Peserta Didik Baru 2026/2027 Telah Dibuka",
+    "title1": "Membentuk Generasi",
+    "title2": "Qur'ani Masa Depan",
+    "description": "Sekolah Dasar Islam Terpadu Tahfidzul Qur'an unggulan di Sukabumi. Membina karakter akhlakul karimah, hafalan Al-Qur'an mutqin bersanad, dan nalar kritis sains.",
+    "cta_primary": "Daftar Sekarang",
+    "cta_secondary": "Pelajari Kurikulum"
+  }
+}

@@ -20,11 +20,11 @@ import { contactFormSchema, ContactFormData } from "@/lib/validations/contact";
 import { cn } from "@/lib/utils";
 
 const QUICK_TOPICS = [
-  "Pendaftaran Kelas 1 (PPDB 2026)",
+  "Registration Kelas 1 (Admissions 2026)",
   "Program 3 Juz Tahfidz & Metode",
   "Jadwal Survei & Observasi Kampus",
   "Biaya Pendidikan & Beasiswa",
-  "Pindahan / Mutasi Sekolah",
+  "Pindahan / Mutasi School",
 ];
 
 export function ContactForm() {
@@ -148,7 +148,7 @@ export function ContactForm() {
       <SpotlightCard
         spotlightColor="rgba(16, 185, 129, 0.12)"
         borderColor="rgba(16, 185, 129, 0.4)"
-        className="rounded-3xl bg-white dark:bg-slate-900 p-8 sm:p-12 shadow-lg text-slate-900 dark:text-slate-50 animate-in fade-in-0 duration-300 relative overflow-hidden"
+        className="rounded-none bg-white dark:bg-slate-900 p-8 sm:p-12 shadow-lg text-slate-900 dark:text-slate-50 animate-in fade-in-0 duration-300 relative overflow-hidden"
       >
         <BorderBeam size={220} duration={10} colorFrom="#10b981" colorTo="#f59e0b" />
         <ConfettiCelebration />
@@ -160,11 +160,11 @@ export function ContactForm() {
           className="relative z-10"
         >
           <div className="flex items-center gap-4 text-emerald-700 mb-6">
-            <div className="flex size-14 items-center justify-center rounded-2xl bg-emerald-50 border border-emerald-200 shadow-2xs">
+            <div className="flex size-14 items-center justify-center rounded-none bg-emerald-50 border border-emerald-200 shadow-2xs">
               <CheckCircle2 aria-hidden="true" className="size-7" />
             </div>
             <div>
-              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/60">
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-none border border-emerald-200/60">
                 STATUS // TERKIRIM
               </span>
               <h3 id="submit-success-heading" className="text-xl sm:text-2xl font-black text-slate-950 dark:text-slate-50 mt-1.5">
@@ -175,7 +175,7 @@ export function ContactForm() {
 
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
             Pertanyaan Anda telah kami catat dalam sistem administrasi SD Al-Birru.
-            Untuk respon instan dan penjadwalan survei lokasi langsung bersama panitia PPDB,
+            Untuk respon instan dan penjadwalan survei lokasi langsung bersama panitia Admissions,
             Anda dapat langsung terhubung ke WhatsApp resmi kami:
           </p>
 
@@ -185,20 +185,20 @@ export function ContactForm() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 h-13 rounded-xl bg-emerald-700 hover:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-900/30 transition-all hover:scale-[1.01] active:scale-[0.99]"
+              className="flex-1 flex items-center justify-center gap-2 h-13 rounded-none bg-emerald-700 hover:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-900/30 transition-all hover:scale-[1.01] active:scale-[0.99]"
             >
               <MessageCircle aria-hidden="true" className="size-5" />
-              <span>Buka Chat WhatsApp Panitia</span>
+              <span>Buka Chat WhatsApp Committee</span>
               <ExternalLink aria-hidden="true" className="size-4 opacity-75" />
             </a>
 
             <button
               onClick={handleReset}
               type="button"
-              className="flex items-center justify-center gap-2 h-13 px-6 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-800 font-bold text-xs transition-colors cursor-pointer"
+              className="flex items-center justify-center gap-2 h-13 px-6 rounded-none border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-800 font-bold text-xs transition-colors cursor-pointer"
             >
               <RotateCcw aria-hidden="true" className="size-4" />
-              <span>Kirim Pesan Lain</span>
+              <span>Submit Pesan Lain</span>
             </button>
           </div>
         </div>
@@ -209,22 +209,22 @@ export function ContactForm() {
   return (
     <SpotlightCard
       spotlightColor="rgba(245, 158, 11, 0.08)"
-      className="rounded-3xl bg-white dark:bg-slate-900 p-8 sm:p-12 shadow-2xs border border-slate-200 dark:border-slate-700 relative overflow-hidden"
+      className="rounded-none bg-white dark:bg-slate-900 p-8 sm:p-12 shadow-2xs border border-slate-200 dark:border-slate-700 relative overflow-hidden"
     >
       <form onSubmit={handleSubmit} noValidate aria-labelledby="contact-form-title">
         <div className="mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-amber-50 border border-amber-200/60 text-amber-800 text-[11px] font-mono font-bold uppercase tracking-wider mb-4">
-            <span className="size-1.5 rounded-full bg-amber-500 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-amber-50 border border-amber-200/60 text-amber-800 text-[11px] font-mono font-bold uppercase tracking-wider mb-4">
+            <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
             <span>FORMULIR // KONSULTASI RESMI</span>
           </div>
           <h3
             id="contact-form-title"
             className="text-2xl sm:text-3xl font-black text-slate-950 dark:text-slate-50 tracking-tight"
           >
-            Konsultasi &amp; Pertanyaan Calon Santri
+            Konsultasi &amp; Pertanyaan Calon Students
           </h3>
           <p className="mt-2 text-sm text-slate-500 leading-relaxed font-normal">
-            Lengkapi data di bawah ini. Tim panitia PPDB akan merespon pertanyaan Anda secara personal.
+            Lengkapi data di bawah ini. Tim panitia Admissions akan merespon pertanyaan Anda secara personal.
           </p>
         </div>
 
@@ -244,7 +244,7 @@ export function ContactForm() {
                   onClick={() => handleSelectTopic(topic)}
                   aria-pressed={isSelected}
                   className={cn(
-                    "text-xs px-3.5 py-2 rounded-xl border font-medium transition-all cursor-pointer",
+                    "text-xs px-3.5 py-2 rounded-none border font-medium transition-all cursor-pointer",
                     isSelected
                       ? "bg-slate-900 border-slate-900 text-white shadow-2xs"
                       : "bg-[#FDFDFB] dark:bg-slate-950 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-800"
@@ -258,7 +258,7 @@ export function ContactForm() {
         </fieldset>
 
         {generalError && (
-          <div role="alert" className="mb-6 p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
+          <div role="alert" className="mb-6 p-4 rounded-none bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
             <AlertCircle aria-hidden="true" className="size-4 shrink-0" />
             <span>{generalError}</span>
           </div>
@@ -284,7 +284,7 @@ export function ContactForm() {
               value={formData.fullName}
               onChange={handleChange}
               placeholder="Contoh: Bapak Hendra Wijaya"
-              className="h-12 rounded-xl border-slate-200 dark:border-slate-700 text-sm focus-visible:ring-amber-500"
+              className="h-12 rounded-none border-slate-200 dark:border-slate-700 text-sm focus-visible:ring-amber-500"
             />
             {errors.fullName && (
               <p id="fullName-error" role="alert" className="mt-1.5 text-xs text-rose-600 font-medium">
@@ -313,7 +313,7 @@ export function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="0812-3456-7890"
-                className="h-12 rounded-xl border-slate-200 dark:border-slate-700 text-sm focus-visible:ring-amber-500 font-mono"
+                className="h-12 rounded-none border-slate-200 dark:border-slate-700 text-sm focus-visible:ring-amber-500 font-mono"
               />
               {errors.phone && (
                 <p id="phone-error" role="alert" className="mt-1.5 text-xs text-rose-600 font-medium">
@@ -338,7 +338,7 @@ export function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="nama@email.com"
-                className="h-12 rounded-xl border-slate-200 dark:border-slate-700 text-sm focus-visible:ring-amber-500"
+                className="h-12 rounded-none border-slate-200 dark:border-slate-700 text-sm focus-visible:ring-amber-500"
               />
               {errors.email && (
                 <p id="email-error" role="alert" className="mt-1.5 text-xs text-rose-600 font-medium">
@@ -354,7 +354,7 @@ export function ContactForm() {
               htmlFor="studentCandidateName"
               className="block text-xs font-mono font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2"
             >
-              Nama Calon Santri Ananda (Opsional)
+              Nama Calon Students Ananda (Opsional)
             </label>
             <Input
               id="studentCandidateName"
@@ -365,7 +365,7 @@ export function ContactForm() {
               value={formData.studentCandidateName}
               onChange={handleChange}
               placeholder="Contoh: Muhammad Rayhan"
-              className="h-12 rounded-xl border-slate-200 dark:border-slate-700 text-sm focus-visible:ring-amber-500"
+              className="h-12 rounded-none border-slate-200 dark:border-slate-700 text-sm focus-visible:ring-amber-500"
             />
             {errors.studentCandidateName && (
               <p id="studentCandidateName-error" role="alert" className="mt-1.5 text-xs text-rose-600 font-medium">
@@ -398,7 +398,7 @@ export function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               placeholder="Tuliskan pertanyaan Anda mengenai kuota, biaya, atau kurikulum..."
-              className="rounded-xl border-slate-200 dark:border-slate-700 text-sm focus-visible:ring-amber-500 resize-none leading-relaxed p-4"
+              className="rounded-none border-slate-200 dark:border-slate-700 text-sm focus-visible:ring-amber-500 resize-none leading-relaxed p-4"
             />
             {errors.message && (
               <p id="message-error" role="alert" className="mt-1.5 text-xs text-rose-600 font-medium">
@@ -413,7 +413,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={isSubmitting}
- className="w-full flex items-center justify-center gap-2 h-13 rounded-xl bg-amber-500 hover:bg-amber-600 active:scale-[0.98] text-slate-950 font-bold text-sm shadow-md shadow-amber-500/20 transition-all cursor-pointer disabled:opacity-50 disabled:pointer-events-none"
+ className="w-full flex items-center justify-center gap-2 h-13 rounded-none bg-amber-500 hover:bg-amber-600 active:scale-[0.98] text-slate-950 font-bold text-sm shadow-md shadow-amber-500/20 transition-all cursor-pointer disabled:opacity-50 disabled:pointer-events-none"
           >
             {isSubmitting ? (
               <>
@@ -423,7 +423,7 @@ export function ContactForm() {
             ) : (
               <>
                 <Send aria-hidden="true" className="size-4.5" />
-                <span>Kirim Pesan Konsultasi</span>
+                <span>Submit Pesan Konsultasi</span>
               </>
             )}
           </button>

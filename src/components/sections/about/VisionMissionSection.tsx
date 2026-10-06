@@ -22,12 +22,12 @@ export function VisionMissionSection() {
     {
       num: "03",
       title: "Kultivasi Adab & 7 Karakter",
-      desc: "Membudayakan adab islami, etika 5S, empati sosial, dan birrul walidain dalam keseharian sekolah maupun keluarga.",
+      desc: "Membudayakan adab islami, etika 5S, empati sosial, dan birrul walidain dalam keseharian school maupun keluarga.",
     },
     {
       num: "04",
       title: "Inkuiri Sains & Komputasi",
-      desc: "Mengembangkan nalar kritis sains, praktikum laboratorium alam, dan computational thinking melalui Kurikulum Merdeka.",
+      desc: "Mengembangkan nalar kritis sains, praktikum laboratorium alam, dan computational thinking melalui Curriculum Merdeka.",
     },
     {
       num: "05",
@@ -61,14 +61,14 @@ export function VisionMissionSection() {
     {
       letter: "R",
       title: "Ramah & Peduli",
-      desc: "Menghadirkan lingkungan sekolah ramah anak yang aman, asri, saling menyayangi, dan berempati sosial.",
+      desc: "Menghadirkan lingkungan school ramah anak yang aman, asri, saling menyayangi, dan berempati sosial.",
       accent: "text-purple-500",
       glow: "rgba(168, 85, 247, 0.12)",
     },
     {
       letter: "U",
       title: "Unggul Berkarya",
-      desc: "Memacu setiap santri untuk berprestasi maksimal dan percaya diri sesuai bakat unik anugerah Ilahi.",
+      desc: "Memacu setiap students untuk berprestasi maksimal dan percaya diri sesuai bakat unik anugerah Ilahi.",
       accent: "text-rose-500",
       glow: "rgba(244, 63, 94, 0.12)",
     },
@@ -79,8 +79,8 @@ export function VisionMissionSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal direction="up" className="max-w-3xl mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-[11px] font-mono font-bold uppercase tracking-wider mb-5">
-            <span className="size-1.5 rounded-full bg-amber-500 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-[11px] font-mono font-bold uppercase tracking-wider mb-5">
+            <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
             <span>HALUAN // VISI, MISI &amp; NILAI INTI</span>
           </div>
           <h2 id="vision-mission-heading" className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 dark:text-slate-50 tracking-tight leading-[1.12]">
@@ -106,21 +106,21 @@ export function VisionMissionSection() {
               <SpotlightCard
                 spotlightColor="rgba(245, 158, 11, 0.15)"
                 borderColor="rgba(245, 158, 11, 0.4)"
-                className="bg-slate-950 text-white p-8 sm:p-12 border-slate-800 shadow-md flex-1 flex flex-col justify-between relative overflow-hidden group rounded-3xl"
+                className="bg-slate-950 text-white p-8 sm:p-12 border-slate-800 shadow-md flex-1 flex flex-col justify-between relative overflow-hidden group rounded-none"
               >
                 <BorderBeam size={220} duration={12} colorFrom="#f59e0b" colorTo="#10b981" />
 
                 <div
                   aria-hidden="true"
-                  className="absolute -top-24 -right-24 size-60 rounded-full bg-amber-500/10 blur-3xl pointer-events-none group-hover:bg-amber-500/20 transition-all"
+                  className="absolute -top-24 -right-24 size-60 rounded-none bg-amber-500/10 blur-3xl pointer-events-none group-hover:bg-amber-500/20 transition-all"
                 />
 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-8">
-                    <div className="size-13 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 shadow-2xs">
+                    <div className="size-13 rounded-none bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 shadow-2xs">
                       <Compass className="size-6 text-amber-400 group-hover:rotate-45 transition-transform duration-300" />
                     </div>
-                    <span className="font-mono text-[11px] font-bold text-amber-400 tracking-widest uppercase px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800">
+                    <span className="font-mono text-[11px] font-bold text-amber-400 tracking-widest uppercase px-3 py-1.5 rounded-none bg-slate-900 border border-slate-800">
                       VISI UTAMA 2026-2030
                     </span>
                   </div>
@@ -130,7 +130,7 @@ export function VisionMissionSection() {
                   </h3>
 
                   <p className="mt-6 text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
-                    Visi ini menjadi bintang penuntun kami dalam membentuk profil santri yang
+                    Visi ini menjadi bintang penuntun kami dalam membentuk profil students yang
                     kokoh spiritualnya, anggun akhlaknya, serta tanggap terhadap sains masa depan.
                   </p>
                 </div>
@@ -155,7 +155,7 @@ export function VisionMissionSection() {
             className="lg:col-span-7 flex flex-col justify-between"
           >
             <div className="mb-6 flex items-center gap-3.5">
-              <div className="size-12 rounded-2xl bg-emerald-50 border border-emerald-200/60 flex items-center justify-center text-emerald-700 shadow-2xs">
+              <div className="size-12 rounded-none bg-emerald-50 border border-emerald-200/60 flex items-center justify-center text-emerald-700 shadow-2xs">
                 <Target className="size-6" />
               </div>
               <div>
@@ -175,8 +175,8 @@ export function VisionMissionSection() {
                   whileHover={{ x: 4, transition: { duration: 0.2 } }}
                   className="list-none"
                 >
-                  <article className="flex items-start gap-4 p-5 rounded-2xl bg-[#FDFDFB] dark:bg-slate-950 border border-slate-200/80 dark:border-slate-700/80 hover:border-slate-300 dark:border-slate-600 hover:shadow-xs transition-all group">
- <span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-slate-950 text-amber-400 font-mono font-bold text-xs group-hover:bg-amber-500 group-hover:text-slate-950 dark:hover:text-slate-50 transition-colors">
+                  <article className="flex items-start gap-4 p-5 rounded-none bg-[#FDFDFB] dark:bg-slate-950 border border-slate-200/80 dark:border-slate-700/80 hover:border-slate-300 dark:border-slate-600 hover:shadow-xs transition-all group">
+ <span className="flex size-8 shrink-0 items-center justify-center rounded-none bg-slate-950 text-amber-400 font-mono font-bold text-xs group-hover:bg-amber-500 group-hover:text-slate-950 dark:hover:text-slate-50 transition-colors">
                       {item.num}
                     </span>
                     <div>
@@ -231,7 +231,7 @@ export function VisionMissionSection() {
                 <article aria-labelledby={`val-title-${idx}`} className="flex-1 flex">
                   <SpotlightCard
                     spotlightColor={val.glow}
-                    className="p-7 bg-[#FDFDFB] dark:bg-slate-950 hover:bg-white dark:hover:bg-slate-700 dark:bg-slate-900 shadow-2xs hover:shadow-md transition-all flex-1 relative flex flex-col justify-between rounded-3xl"
+                    className="p-7 bg-[#FDFDFB] dark:bg-slate-950 hover:bg-white dark:hover:bg-slate-700 dark:bg-slate-900 shadow-2xs hover:shadow-md transition-all flex-1 relative flex flex-col justify-between rounded-none"
                   >
                     {/* Huge Background Letter Watermark */}
                     <span
@@ -243,7 +243,7 @@ export function VisionMissionSection() {
 
                     <div className="relative z-10">
                       <div
-                        className={`size-12 rounded-2xl bg-slate-950 text-white font-mono font-black text-xl flex items-center justify-center mb-5 shadow-2xs ${val.accent}`}
+                        className={`size-12 rounded-none bg-slate-950 text-white font-mono font-black text-xl flex items-center justify-center mb-5 shadow-2xs ${val.accent}`}
                       >
                         {val.letter}
                       </div>

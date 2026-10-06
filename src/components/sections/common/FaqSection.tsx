@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { ChevronDown, MessageCircle, Phone, Sparkles } from "lucide-react";
@@ -17,37 +17,37 @@ const faqs: FaqItem[] = [
   {
     id: "faq-hours",
     num: "01",
-    question: "Bagaimana jam operasional belajar dan ritme harian santri di sekolah?",
+    question: "Bagaimana jam operasional belajar dan ritme harian students di school?",
     answer:
-      "Kegiatan santri berlangsung hari Senin hingga Kamis pukul 07.15 – 15.00 WIB. Hari dimulai dengan Sholat Dhuha bersama dan halaqah tahfidz talaqqi pagi, dilanjutkan pembelajaran tematik Kurikulum Merdeka, Sholat Dzuhur berjamaah, serta makan siang bersama. Khusus hari Jumat, kepulangan pada pukul 11.30 WIB untuk persiapan ibadah Sholat Jumat.",
+      "Kegiatan students berlangsung hari Senin hingga Kamis pukul 07.15 – 15.00 WIB. Hari dimulai dengan Sholat Dhuha bersama dan halaqah tahfidz talaqqi pagi, dilanjutkan pembelajaran tematik Curriculum Merdeka, Sholat Dzuhur berjamaah, serta makan siang bersama. Khusus hari Jumat, kepulangan pada pukul 11.30 WIB untuk persiapan ibadah Sholat Jumat.",
   },
   {
     id: "faq-catering",
     num: "02",
-    question: "Bagaimana standar penyediaan makan siang dan asupan gizi santri?",
+    question: "Bagaimana standar penyediaan makan siang dan asupan gizi students?",
     answer:
       "SD Al-Birru menyediakan katering makan siang sehat higienis dengan menu seimbang setiap hari (karbohidrat kompleks, protein hewani/nabati, sayuran segar, dan buah) tanpa penyedap sintetis berlebih. Waktu makan juga menjadi sarana pembiasaan adab islami: duduk tertib, membaca doa bersama, dan menjaga adab tanpa menyisakan makanan.",
   },
   {
     id: "faq-shuttle",
     num: "03",
-    question: "Apakah tersedia armada layanan antar-jemput bagi santri yang berdomisili jauh?",
+    question: "Apakah tersedia armada layanan antar-jemput bagi students yang berdomisili jauh?",
     answer:
-      "Tersedia layanan antar-jemput armada resmi berpendingin udara dengan rute terpadu di wilayah Kota dan Kabupaten Sukabumi. Setiap armada didampingi oleh staf sekolah serta dilengkapi koordinasi komunikasi aktif bersama orang tua untuk memastikan keselamatan, ketepatan waktu, dan kenyamanan santri selama perjalanan.",
+      "Tersedia layanan antar-jemput armada resmi berpendingin udara dengan rute terpadu di wilayah Kota dan Kabupaten Sukabumi. Setiap armada didampingi oleh staf school serta dilengkapi koordinasi komunikasi aktif bersama orang tua untuk memastikan keselamatan, ketepatan waktu, dan kenyamanan students selama perjalanan.",
   },
   {
     id: "faq-matrikulasi",
     num: "04",
-    question: "Bagaimana jika calon santri baru belum lancar mengenal huruf hijaiyah atau membaca Iqra'?",
+    question: "Bagaimana jika calon students baru belum lancar mengenal huruf hijaiyah atau membaca Iqra'?",
     answer:
       "Bapak/Ibu tidak perlu berkecil hati. Kami menyelenggarakan program matrikulasi tahsin intensif pada 3 bulan pertama semester ganjil. Asatidz membimbing dengan metode talaqqi personal penuh kesabaran dari tingkat dasar tanpa menghakimi kemampuan awal anak, sehingga ananda merasa dihargai dan antusias belajar.",
   },
   {
     id: "faq-observation",
     num: "05",
-    question: "Bagaimana tahapan observasi masuk penerimaan santri baru (PPDB)?",
+    question: "Bagaimana tahapan observasi masuk penerimaan students baru (Admissions)?",
     answer:
-      "Observasi dirancang dengan pendekatan ramah anak (child-friendly assessment) melalui kegiatan bermain edukatif terarah untuk memetakan kesiapan motorik, kemandirian emosional, dan interaksi sosial anak. Kami tidak memberlakukan tes calistung kaku sebagai penentu kelulusan, dan menyertakan sesi dialog kemitraan bersama orang tua demi penyelarasan visi di rumah dan sekolah.",
+      "Observasi dirancang dengan pendekatan ramah anak (child-friendly assessment) melalui kegiatan bermain edukatif terarah untuk memetakan kesiapan motorik, kemandirian emosional, dan interaksi sosial anak. Kami tidak memberlakukan tes calistung kaku sebagai penentu kelulusan, dan menyertakan sesi dialog kemitraan bersama orang tua demi penyelarasan visi di rumah dan school.",
   },
 ];
 
@@ -83,13 +83,13 @@ export function FaqSection() {
           {/* Left Column: Industrial Overview & Direct Humas Reassurance (Golden Ratio Minor 5/12) */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
             <ScrollReveal direction="up" delay={0.1}>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold tracking-wider text-slate-800 dark:text-slate-200 uppercase mb-6">
-                <span className="size-1.5 rounded-full bg-amber-500 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold tracking-wider text-slate-800 dark:text-slate-200 uppercase mb-6">
+                <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
                 <span>FAQ // INFORMASI OPERASIONAL</span>
               </div>
 
               <h2 id="faq-section-heading" className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 dark:text-slate-50 tracking-tight leading-[1.12]">
-                Pertanyaan Logistik &amp; Keseharian Santri
+                Pertanyaan Logistik &amp; Keseharian Students
               </h2>
 
               <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-normal max-w-xl">
@@ -97,11 +97,11 @@ export function FaqSection() {
                 armada antar-jemput, dan tata cara observasi masuk ramah anak di SD Al-Birru.
               </p>
 
-              {/* Direct Support Box - Strict 8pt Grid (p-8 = 32px, rounded-3xl = 24px) */}
+              {/* Direct Support Box - Strict 8pt Grid (p-8 = 32px, rounded-none = 24px) */}
               <aside aria-labelledby="faq-support-title" className="mt-8">
                 <motion.div
                   whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                  className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs hover:shadow-lg transition-all"
+                  className="p-8 rounded-none bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 shadow-none hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors"
                 >
                   <div className="flex items-center gap-2.5 mb-3">
                     <Sparkles className="size-5 text-amber-500 shrink-0" />
@@ -110,8 +110,8 @@ export function FaqSection() {
                     </h3>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 font-normal">
-                    Memerlukan informasi lebih mendalam terkait pendaftaran, survei lokasi, atau
-                    konsultasi pemindahan santri?
+                    Memerlukan informasi lebih mendalam terkait registration, survei lokasi, atau
+                    konsultasi pemindahan students?
                   </p>
 
                   <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
@@ -119,7 +119,7 @@ export function FaqSection() {
                       href="https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20SD%20Al-Birru,%20saya%20ingin%20konsultasi%20seputar%20operasional%20sekolah."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-6 h-12 rounded-full bg-emerald-700 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm transition-all shadow-md shadow-emerald-900/30 active:scale-95 min-h-[48px]"
+                      className="flex items-center justify-center gap-2 px-6 h-12 rounded-none bg-emerald-700 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm transition-all shadow-md shadow-emerald-900/30 active:scale-95 min-h-[48px]"
                     >
                       <MessageCircle className="size-4.5" />
                       <span>Chat Langsung ke Tim Humas (WA)</span>
@@ -127,7 +127,7 @@ export function FaqSection() {
 
                     <a
                       href="tel:+6281234567890"
-                      className="flex items-center justify-center gap-2 px-6 h-12 rounded-full bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-slate-700 dark:text-slate-300 font-semibold text-xs sm:text-sm border border-slate-200 dark:border-slate-700 transition-colors active:scale-95 min-h-[48px]"
+                      className="flex items-center justify-center gap-2 px-6 h-12 rounded-none bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-slate-700 dark:text-slate-300 font-semibold text-xs sm:text-sm border border-slate-200 dark:border-slate-700 transition-colors active:scale-95 min-h-[48px]"
                     >
                       <Phone className="size-4 text-slate-500" />
                       <span>Hotline: (0266) 123-456</span>
@@ -138,9 +138,15 @@ export function FaqSection() {
             </ScrollReveal>
           </div>
 
-          {/* Right Column: W3C WAI-ARIA Standard Semantic Accordion List (Golden Ratio Major 7/12) */}
+          {/* Right Column: W3C WAI-ARIA Standard Semantic Accordion List */}
           <div className="lg:col-span-7">
-            <ul className="space-y-4">
+            <ul className="grid grid-cols-1 bg-slate-200 dark:bg-slate-800 gap-[1px] border border-slate-200 dark:border-slate-800 relative">
+              {/* Crosshairs */}
+              <div className="absolute -top-1.5 -left-1.5 size-3 border border-amber-500 z-10 bg-white dark:bg-slate-950" />
+              <div className="absolute -top-1.5 -right-1.5 size-3 border border-amber-500 z-10 bg-white dark:bg-slate-950" />
+              <div className="absolute -bottom-1.5 -left-1.5 size-3 border border-amber-500 z-10 bg-white dark:bg-slate-950" />
+              <div className="absolute -bottom-1.5 -right-1.5 size-3 border border-amber-500 z-10 bg-white dark:bg-slate-950" />
+
               {faqs.map((faq, idx) => {
                 const isOpen = openId === faq.id;
                 return (
@@ -155,10 +161,10 @@ export function FaqSection() {
                       ease: [0.21, 0.47, 0.32, 0.98],
                     }}
                     className={cn(
-                      "rounded-3xl border transition-all duration-200 overflow-hidden list-none",
+                      "rounded-none transition-colors duration-200 overflow-hidden list-none",
                       isOpen
-                        ? "bg-white dark:bg-slate-900 border-slate-400 shadow-md ring-1 ring-slate-900/5"
-                        : "bg-white/90 border-slate-200/90 hover:border-slate-300 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-700 dark:bg-slate-900"
+                        ? "bg-white dark:bg-slate-900"
+                        : "bg-[#FDFDFB] hover:bg-slate-50 dark:hover:bg-slate-900/50 dark:bg-slate-950"
                     )}
                   >
                     <h3 className="m-0 p-0 text-base sm:text-lg font-bold text-slate-950 dark:text-slate-50">
@@ -168,16 +174,16 @@ export function FaqSection() {
                         aria-controls={`faq-panel-${faq.id}`}
                         aria-expanded={isOpen}
                         onClick={() => toggleFaq(faq.id)}
-                        className="w-full flex items-start justify-between gap-4 p-6 sm:p-8 text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 rounded-3xl min-h-[56px]"
+                        className="w-full flex items-start justify-between gap-4 p-6 sm:p-8 text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 rounded-none min-h-[56px]"
                       >
                         <span className="flex items-start gap-4 sm:gap-5">
                           {/* Monospace Numeric Indicator with Concentric Pill */}
                           <span
                             className={cn(
-                              "font-mono text-xs font-bold px-3 py-1.5 rounded-full shrink-0 transition-colors",
+                              "font-mono text-xs font-bold px-3 py-1.5 rounded-none shrink-0 transition-colors border",
                               isOpen
-                                ? "bg-slate-950 text-amber-400"
-                                : "bg-slate-100 text-slate-600 dark:text-slate-400"
+                                ? "bg-slate-950 text-amber-400 border-slate-950"
+                                : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700"
                             )}
                           >
                             {faq.num}
@@ -187,7 +193,7 @@ export function FaqSection() {
 
                         <span
                           className={cn(
-                            "size-10 rounded-full flex items-center justify-center shrink-0 transition-colors",
+                            "size-10 rounded-none flex items-center justify-center shrink-0 transition-colors",
                             isOpen
                               ? "bg-amber-500/10 text-amber-700"
                               : "bg-slate-100 text-slate-400"

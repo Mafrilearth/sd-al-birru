@@ -26,8 +26,8 @@ interface NewsArchiveGridProps {
 const categories = [
   { id: "all", label: "Semua Kategori" },
   { id: "tahfidz", label: "Tahfidz & Keislaman" },
-  { id: "prestasi", label: "Prestasi Santri" },
-  { id: "kegiatan", label: "Berita Kegiatan" },
+  { id: "prestasi", label: "Prestasi Students" },
+  { id: "kegiatan", label: "News Kegiatan" },
   { id: "pengumuman", label: "Pengumuman Resmi" },
 ];
 
@@ -56,18 +56,18 @@ export function NewsArchiveGrid({ articles }: NewsArchiveGridProps) {
 
   return (
     <div className="space-y-14 md:space-y-16">
-      <h2 id="news-archive-heading" className="sr-only">Arsip &amp; Indeks Warta Sekolah</h2>
+      <h2 id="news-archive-heading" className="sr-only">Arsip &amp; Indeks News School</h2>
 
       {/* Search & Category Filter Bar */}
       <div
         role="search"
-        aria-label="Pencarian dan Filter Warta"
-        className="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 sm:p-7 rounded-3xl bg-[#FDFDFB] dark:bg-slate-950 border border-slate-200 dark:border-slate-700 shadow-2xs"
+        aria-label="Pencarian dan Filter News"
+        className="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 sm:p-7 rounded-none bg-[#FDFDFB] dark:bg-slate-950 border border-slate-200 dark:border-slate-700 shadow-2xs"
       >
         {/* Animated Category Pills with layoutId */}
         <div
           role="group"
-          aria-label="Pilihan Kategori Warta"
+          aria-label="Pilihan Kategori News"
           className="flex flex-wrap items-center gap-2"
         >
           {categories.map((cat) => {
@@ -78,7 +78,7 @@ export function NewsArchiveGrid({ articles }: NewsArchiveGridProps) {
                 type="button"
                 onClick={() => setSelectedCategory(cat.id)}
                 className={cn(
-                  "relative px-4 py-2.5 rounded-xl text-xs font-bold transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-amber-500 font-mono",
+                  "relative px-4 py-2.5 rounded-none text-xs font-bold transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-amber-500 font-mono",
                   isActive ? "text-white" : "text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-slate-50"
                 )}
               >
@@ -86,7 +86,7 @@ export function NewsArchiveGrid({ articles }: NewsArchiveGridProps) {
                   <motion.div
                     layoutId="active-news-category-pill"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                    className="absolute inset-0 rounded-xl bg-slate-950 shadow-sm"
+                    className="absolute inset-0 rounded-none bg-slate-950 shadow-sm"
                   />
                 )}
                 <span className="relative z-10">{cat.label}</span>
@@ -100,11 +100,11 @@ export function NewsArchiveGrid({ articles }: NewsArchiveGridProps) {
           <Search aria-hidden="true" className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-slate-400" />
           <Input
             type="text"
-            placeholder="Cari kata kunci berita..."
-            aria-label="Cari kata kunci berita"
+            placeholder="Search kata kunci berita..."
+            aria-label="Search kata kunci berita"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 h-11 rounded-xl border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-900 dark:text-slate-50 placeholder:text-slate-400 focus-visible:ring-amber-500 font-sans shadow-2xs"
+            className="pl-10 h-11 rounded-none border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-900 dark:text-slate-50 placeholder:text-slate-400 focus-visible:ring-amber-500 font-sans shadow-2xs"
           />
         </div>
       </div>
@@ -121,14 +121,14 @@ export function NewsArchiveGrid({ articles }: NewsArchiveGridProps) {
             >
               <SpotlightCard
                 spotlightColor="rgba(245, 158, 11, 0.1)"
-                className="p-8 sm:p-12 lg:p-14 bg-slate-950 text-white border-slate-800 shadow-md relative overflow-hidden group rounded-3xl"
+                className="p-8 sm:p-12 lg:p-14 bg-slate-950 text-white border-slate-800 shadow-md relative overflow-hidden group rounded-none"
               >
                 <BorderBeam size={240} duration={12} colorFrom="#f59e0b" colorTo="#10b981" />
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
                   {/* Left Column: Image Placeholder */}
                   <div className="lg:col-span-5">
-                    <figure className="aspect-[16/10] w-full rounded-2xl bg-slate-900 border border-slate-800 flex flex-col items-center justify-center text-slate-500 group-hover:bg-slate-850 transition-colors overflow-hidden">
+                    <figure className="aspect-[16/10] w-full rounded-none bg-slate-900 border border-slate-800 flex flex-col items-center justify-center text-slate-500 group-hover:bg-slate-850 transition-colors overflow-hidden">
                       <ImageIcon aria-hidden="true" className="size-12 text-slate-700 dark:text-slate-300 group-hover:scale-110 transition-transform duration-300" />
                       <figcaption className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-2 font-mono">
                         Liputan Utama
@@ -140,7 +140,7 @@ export function NewsArchiveGrid({ articles }: NewsArchiveGridProps) {
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="px-3 py-1 rounded-md bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase">
+                        <span className="px-3 py-1 rounded-none bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase">
                           {featuredArticle.categoryLabel}
                         </span>
                         <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
@@ -173,9 +173,9 @@ export function NewsArchiveGrid({ articles }: NewsArchiveGridProps) {
 
                       <Link
                         href={`/news/${featuredArticle.slug}`}
- className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 h-11 rounded-xl text-xs transition-transform hover:scale-[1.02] active:scale-[0.98]"
+ className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 h-11 rounded-none text-xs transition-transform hover:scale-[1.02] active:scale-[0.98]"
                       >
-                        <span>Baca Berita Lengkap</span>
+                        <span>Baca News Lengkap</span>
                         <ArrowRight aria-hidden="true" className="size-3.5" />
                       </Link>
                     </footer>
@@ -187,7 +187,7 @@ export function NewsArchiveGrid({ articles }: NewsArchiveGridProps) {
 
           {/* Regular Articles Semantic List */}
           <ul
-            aria-label="Daftar Warta Sekolah"
+            aria-label="Register News School"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 list-none p-0"
             role="list"
           >
@@ -210,20 +210,20 @@ export function NewsArchiveGrid({ articles }: NewsArchiveGridProps) {
                 >
                   <SpotlightCard
                     spotlightColor="rgba(245, 158, 11, 0.08)"
-                    className="p-7 sm:p-8 bg-[#FDFDFB] dark:bg-slate-950 hover:bg-white dark:hover:bg-slate-700 dark:bg-slate-900 shadow-2xs hover:shadow-xl transition-all flex-1 flex flex-col justify-between group rounded-3xl"
+                    className="p-7 sm:p-8 bg-[#FDFDFB] dark:bg-slate-950 hover:bg-white dark:hover:bg-slate-700 dark:bg-slate-900 shadow-2xs hover:shadow-xl transition-all flex-1 flex flex-col justify-between group rounded-none"
                   >
                     <div>
                       {/* Image Placeholder */}
-                      <figure className="relative aspect-[16/10] w-full rounded-2xl bg-slate-100 border border-slate-200/80 dark:border-slate-700/80 mb-6 flex flex-col items-center justify-center text-slate-400 group-hover:bg-slate-150 transition-colors overflow-hidden">
+                      <figure className="relative aspect-[16/10] w-full rounded-none bg-slate-100 border border-slate-200/80 dark:border-slate-700/80 mb-6 flex flex-col items-center justify-center text-slate-400 group-hover:bg-slate-150 transition-colors overflow-hidden">
                         <ImageIcon aria-hidden="true" className="size-8 text-slate-300 group-hover:scale-110 transition-transform duration-300" />
                         <figcaption className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1 font-mono">
-                          Foto Warta
+                          Foto News
                         </figcaption>
                       </figure>
 
                       {/* Meta Header */}
                       <div className="flex items-center justify-between gap-2 mb-3.5">
-                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200/60 font-mono">
+                        <span className="inline-block px-2.5 py-0.5 rounded-none text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200/60 font-mono">
                           {article.categoryLabel}
                         </span>
                         <div className="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
@@ -254,7 +254,7 @@ export function NewsArchiveGrid({ articles }: NewsArchiveGridProps) {
                         href={`/news/${article.slug}`}
                         className="text-xs font-bold text-slate-900 dark:text-slate-50 group-hover:text-amber-700 transition-colors flex items-center gap-1.5 group/link"
                       >
-                        <span>Baca Selengkapnya</span>
+                        <span>Baca Read More</span>
                         <ArrowRight aria-hidden="true" className="size-3.5 text-amber-600 group-hover/link:translate-x-1 transition-transform" />
                       </Link>
 
@@ -274,7 +274,7 @@ export function NewsArchiveGrid({ articles }: NewsArchiveGridProps) {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="p-20 text-center rounded-3xl bg-[#FDFDFB] dark:bg-slate-950 border border-slate-200 dark:border-slate-700"
+          className="p-20 text-center rounded-none bg-[#FDFDFB] dark:bg-slate-950 border border-slate-200 dark:border-slate-700"
         >
           <BookOpen aria-hidden="true" className="size-14 text-slate-400 mx-auto mb-4" />
           <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">
