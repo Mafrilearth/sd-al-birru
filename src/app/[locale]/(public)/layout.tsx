@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "@/app/globals.css";
 import { PublicNavbar } from "@/components/layout/PublicNavbar";
 import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
@@ -10,16 +10,16 @@ import { FloatingWhatsApp } from "@/components/common/FloatingWhatsApp";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { GlobalGrid } from "@/components/common/GlobalGrid";
 
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const robotoMono = Roboto_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "800"],
+  display: "swap",
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sdalbirru.sch.id";
@@ -165,7 +165,7 @@ export default async function PublicRootLayout({
   return (
     <html
       lang={locale}
-      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans h-full antialiased`}
+      className={`${inter.variable} ${robotoMono.variable} font-sans h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
