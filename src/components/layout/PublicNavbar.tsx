@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { ArrowRight, User, Menu } from "lucide-react";
 import { BrandLogo } from "@/components/common/BrandLogo";
 import { LocaleSwitcher } from "@/components/common/LocaleSwitcher";
+import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
@@ -105,8 +106,9 @@ export function PublicNavbar() {
 
           {/* Right Section: Mobile Menu, Locale, & CTA */}
           <div className="flex items-stretch divide-x divide-slate-200 dark:divide-slate-800 border-l border-slate-200 dark:border-slate-800">
-            {/* Locale Switcher */}
-            <div className="hidden sm:block">
+            {/* Theme Toggle & Locale Switcher */}
+            <div className="hidden sm:flex items-center gap-2 px-4">
+              <ThemeToggle />
               <LocaleSwitcher />
             </div>
 

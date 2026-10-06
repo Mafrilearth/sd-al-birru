@@ -28,7 +28,10 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#FDFDFB",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FDFDFB" },
+    { media: "(prefers-color-scheme: dark)", color: "#020617" },
+  ],
 };
 
 export const metadata: Metadata = {
@@ -177,9 +180,8 @@ export default async function PublicRootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-amber-500 selection:text-slate-950 font-sans relative overflow-x-hidden">
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          forcedTheme="light"
-          enableSystem={false}
+          defaultTheme="system"
+          enableSystem={true}
           disableTransitionOnChange
         >
           {/* Skip to Content for Keyboard Accessibility */}
