@@ -168,7 +168,7 @@ export default async function PublicRootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schoolStructuredData) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-amber-500 selection:text-slate-950 font-sans relative">
+      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-amber-500 selection:text-slate-950 font-sans relative overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
