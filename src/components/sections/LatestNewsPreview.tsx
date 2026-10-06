@@ -57,7 +57,7 @@ export const fallbackArticles: ArticlePreview[] = [
 
 export function LatestNewsPreview() {
   return (
-    <section aria-labelledby="latest-news-heading" className="py-28 md:py-36 lg:py-44 bg-[#FDFDFB] dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-700/80">
+    <section aria-labelledby="latest-news-heading" className="py-28 md:py-36 lg:py-44 bg-transparent border-b border-slate-200/80 dark:border-slate-700/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with ScrollReveal */}
         <ScrollReveal

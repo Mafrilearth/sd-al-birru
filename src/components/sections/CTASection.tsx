@@ -23,7 +23,7 @@ export function CTASection({
   primaryBtnHref = "/contact",
 }: CTASectionProps) {
   return (
-    <section aria-labelledby="cta-heading" className="py-28 md:py-36 lg:py-44 bg-[#FDFDFB] dark:bg-slate-950">
+    <section aria-labelledby="cta-heading" className="py-28 md:py-36 lg:py-44 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up" scale={0.98}>
           <div className="relative group">
