@@ -54,7 +54,7 @@ export function BrandLogo({ className, isDarkBackground = false }: BrandLogoProp
         <span
           className={cn(
             "text-[10px] font-semibold tracking-wider uppercase mt-1",
-            isDarkBackground ? "text-amber-400" : "text-amber-600"
+            isDarkBackground ? "text-amber-400" : "text-amber-600 dark:text-amber-400"
           )}
         >
           Sahabat Pendidikan Anak
