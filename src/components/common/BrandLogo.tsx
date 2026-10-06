@@ -11,7 +11,7 @@ export function BrandLogo({ className, isDarkBackground = false }: BrandLogoProp
   return (
     <Link
       href="/"
-      className={cn("group flex items-center gap-4 transition-transform hover:scale-[1.02]", className)}
+      className={cn("group flex items-center gap-4", className)}
       aria-label="Kembali ke Home SD Al-Birru"
     >
       {/* Official Al-Birru Shield Icon (SVG) - Exact 64px (2 grid blocks) */}
@@ -46,7 +46,7 @@ export function BrandLogo({ className, isDarkBackground = false }: BrandLogoProp
         <span
           className={cn(
             "text-lg font-black tracking-tight leading-none font-sans",
-            isDarkBackground ? "text-white" : "text-slate-900 dark:text-slate-50 group-hover:text-amber-600 transition-colors"
+            isDarkBackground ? "text-white" : "text-slate-900 dark:text-slate-50"
           )}
         >
           SD AL-BIRRU
