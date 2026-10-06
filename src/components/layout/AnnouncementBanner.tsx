@@ -16,7 +16,7 @@ export function AnnouncementBanner() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-center md:text-left">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-[10px] md:text-xs font-bold font-mono uppercase tracking-widest leading-tight">
-            <Megaphone className="size-3.5 animate-pulse shrink-0" />
+            <Megaphone className="size-3.5 shrink-0" />
             <span>Pendaftaran Peserta Didik Baru (PPDB) 2026/2027 Telah Dibuka!</span>
           </div>
           <div className="inline-flex items-center justify-center gap-1 text-[10px] md:text-[11px] font-bold font-mono uppercase bg-white dark:bg-slate-950 text-amber-600 dark:text-amber-500 px-3 py-1 shrink-0 whitespace-nowrap shadow-2xs">

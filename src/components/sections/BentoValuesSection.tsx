@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight, BookMarked, Heart, Cpu, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
-import { ScrollReveal } from "@/components/common/ScrollReveal";
+
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 import { BorderBeam } from "@/components/common/BorderBeam";
 import {
@@ -18,8 +18,8 @@ export function BentoValuesSection() {
   return (
     <section aria-labelledby="bento-values-heading" className="py-28 md:py-36 lg:py-44 bg-transparent border-b border-slate-200/70 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header with Scroll Reveal */}
-        <ScrollReveal direction="up" className="max-w-3xl mb-16 md:mb-20">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-16 md:mb-20">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-900 border border-slate-200/90 shadow-2xs text-[11px] font-mono font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 mb-5">
             <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
             <span>KURIKULUM // 4 PILAR TERPADU</span>
@@ -31,7 +31,7 @@ export function BentoValuesSection() {
             Struktur pengajaran yang memadukan kedalaman spiritual Al-Qur&apos;an, keluhuran adab,
             dan kelincahan nalar sains secara terukur.
           </p>
-        </ScrollReveal>
+        </div>
 
         {/* Exposed 1px Structural Grid (Hairline Grid System) */}
         <div className="relative">

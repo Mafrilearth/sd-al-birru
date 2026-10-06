@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
+
 import {
   ShieldCheck,
   BookOpen,
@@ -68,44 +68,24 @@ export function PageHeader({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Monospace Kicker Pill */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: -8 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold tracking-wider text-slate-800 dark:text-slate-200 uppercase mb-6"
-        >
-          <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold tracking-wider text-slate-800 dark:text-slate-200 uppercase mb-6">
+          <span className="size-1.5 rounded-none bg-amber-500" />
           <span>{kicker}</span>
-        </motion.div>
+        </div>
 
         {/* High-Contrast Editorial Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 0.55, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-950 dark:text-slate-50 tracking-tight leading-[1.12] max-w-4xl mx-auto"
-        >
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-950 dark:text-slate-50 tracking-tight leading-[1.12] max-w-4xl mx-auto">
           {title}
-        </motion.h1>
+        </h1>
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.55 }}
-          className="mt-6 text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-normal"
-        >
+        <p className="mt-6 text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-normal">
           {description}
-        </motion.p>
+        </p>
 
         {/* Architectural Quick Badges */}
         {badges && badges.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="mt-10 flex flex-wrap justify-center gap-3 sm:gap-4 text-xs text-slate-700 dark:text-slate-300 font-mono"
-          >
+          <div className="mt-10 flex flex-wrap justify-center gap-3 sm:gap-4 text-xs text-slate-700 dark:text-slate-300 font-mono">
             {badges.map((b, idx) => {
               const Icon = b.iconName ? ICON_MAP[b.iconName] : null;
               return (
@@ -118,7 +98,7 @@ export function PageHeader({
                 </div>
               );
             })}
-          </motion.div>
+          </div>
         )}
       </div>
     </section>
