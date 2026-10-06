@@ -110,12 +110,12 @@ export function PublicNavbar() {
               <LocaleSwitcher />
             </div>
 
-            {/* CTA Button (Desktop) */}
-            <div className="hidden sm:flex items-center">
-              <Button asChild variant="default" className="w-[160px] h-full rounded-none bg-slate-950 hover:bg-slate-800 text-white font-bold font-mono uppercase text-xs group">
+            {/* CTA Button (Desktop Only) */}
+            <div className="hidden lg:flex items-center">
+              <Button asChild variant="default" className="w-[160px] h-full rounded-none bg-slate-950 hover:bg-slate-800 text-white font-bold font-mono uppercase text-xs group whitespace-nowrap">
                 <Link href="/contact">
                   <span>{t("contact")}</span>
-                  <ArrowRight className="size-3.5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="size-3.5 ml-2 group-hover:translate-x-1 transition-transform shrink-0" />
                 </Link>
               </Button>
             </div>
