@@ -63,6 +63,7 @@
     "@types/react-dom": "^19",
     "@vitest/browser-playwright": "^4",
     "@vitest/coverage-v8": "^4",
+    "drizzle-kit": "^0.31.11",
     "eslint": "^9",
     "eslint-config-next": "16.3.8",
     "eslint-plugin-storybook": "^10.6.1",
