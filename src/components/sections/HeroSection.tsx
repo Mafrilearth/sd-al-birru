@@ -46,7 +46,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-[58px] font-black text-slate-950 dark:text-slate-50 tracking-tight leading-[1.12]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[58px] font-bold text-slate-950 dark:text-slate-50 tracking-tight leading-[1.12]"
             >
               {t("title1")} <br className="hidden sm:block" /> {t("title2")}
             </motion.h1>
