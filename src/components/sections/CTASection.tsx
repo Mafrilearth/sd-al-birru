@@ -65,7 +65,7 @@ export function CTASection({
                   </Link>
                 </Button>
 
-                <Button asChild variant="outline" className="w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-700 dark:border-slate-300 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-200 text-slate-100 dark:text-slate-950 font-semibold px-7 h-13 rounded-none transition-all text-base group">
+                <Button asChild variant="outline" className="w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-700 dark:border-slate-700 bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-slate-100 dark:text-slate-200 font-semibold px-7 h-13 rounded-none transition-all text-base group">
                   <a
                     href="https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20SD%20Al-Birru,%20saya%20ingin%20konsultasi%20PPDB%20Tahun%20Ajaran%202026/2027."
                     target="_blank"
