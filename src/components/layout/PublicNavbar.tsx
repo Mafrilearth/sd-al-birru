@@ -114,7 +114,7 @@ export function PublicNavbar() {
 
             {/* CTA Button (Desktop Only) */}
             <div className="hidden xl:flex items-center">
-              <Button asChild variant="default" className="px-6 h-full rounded-none bg-slate-950 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold font-mono uppercase text-xs group whitespace-nowrap">
+              <Button asChild variant="default" className="px-6 h-full rounded-none bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold font-mono uppercase text-xs group whitespace-nowrap">
                 <Link href="/contact" className="flex items-center gap-2">
                   <span>{t("contact")}</span>
                   <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
