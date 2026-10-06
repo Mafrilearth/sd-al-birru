@@ -16,7 +16,7 @@ import { Badge } from "@/components/ui/badge";
 
 export function BentoValuesSection() {
   return (
-    <section aria-labelledby="bento-values-heading" className="py-28 md:py-36 lg:py-44 bg-[#FDFDFB] dark:bg-slate-950 border-b border-slate-200/70 relative">
+    <section aria-labelledby="bento-values-heading" className="py-28 md:py-36 lg:py-44 bg-transparent border-b border-slate-200/70 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header with Scroll Reveal */}
         <ScrollReveal direction="up" className="max-w-3xl mb-16 md:mb-20">

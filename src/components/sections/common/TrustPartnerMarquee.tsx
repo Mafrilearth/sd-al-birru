@@ -27,7 +27,7 @@ const trustItems: TrustItem[] = [
 
 export function TrustPartnerMarquee() {
   return (
-    <section className="py-8 sm:py-10 bg-[#FAF9F5] border-b border-slate-200/80 dark:border-slate-700/80 overflow-hidden relative">
+    <section className="py-8 sm:py-10 bg-transparent border-b border-slate-200/80 dark:border-slate-700/80 overflow-hidden relative">
       {/* Subtle edge fades */}
       <div
         aria-hidden="true"
