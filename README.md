@@ -26,6 +26,7 @@ We utilize Architecture Decision Records to historically document why a specific
 9. **[09-COMPONENT_ARCHITECTURE.md](./docs/09-COMPONENT_ARCHITECTURE.md):** Server Components (RSC) vs Client Components strict isolation rules.
 10. **[10-USER_JOURNEY_FLOWS.md](./docs/10-USER_JOURNEY_FLOWS.md):** Finite State Machines (FSM) mapped out in Mermaid for robust user interactions.
 11. **[11-API_CONTRACT_SPECIFICATIONS.md](./docs/11-API_CONTRACT_SPECIFICATIONS.md):** Zod schema validations and strict Frontend-to-Backend data contracts.
+12. **[12-FEATURE_SPECIFICATION_PPDB.md](./docs/12-FEATURE_SPECIFICATION_PPDB.md):** Spesifikasi teknis dan turunan implementasi khusus untuk fitur Pendaftaran PPDB.
 
 ---
 

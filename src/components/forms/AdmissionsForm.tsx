@@ -76,63 +76,37 @@ export function AdmissionsForm() {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <Label htmlFor="childName">Nama Lengkap Calon Students <span className="text-rose-500">*</span></Label>
-            <Input id="childName" required placeholder="Sesuai Akta Kelahiran" className="h-11" />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="nik">NIK Calon Students <span className="text-rose-500">*</span></Label>
-            <Input id="nik" required placeholder="16 Digit NIK" className="h-11" />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <Label htmlFor="parentName">Nama Orang Tua / Wali <span className="text-rose-500">*</span></Label>
-            <Input id="parentName" required placeholder="Nama Lengkap" className="h-11" />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="whatsapp">No. WhatsApp Aktif <span className="text-rose-500">*</span></Label>
-            <Input id="whatsapp" type="tel" required placeholder="0812-3456-7890" className="h-11" />
-          </div>
+        <div className="space-y-2">
+          <Label htmlFor="studentName">Nama Lengkap Calon Siswa <span className="text-rose-500">*</span></Label>
+          <Input id="studentName" required placeholder="Sesuai Akta Kelahiran" className="h-11 rounded-none" />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="program">Jalur Registration / Program <span className="text-rose-500">*</span></Label>
-          <Select defaultValue="reguler" name="program">
-            <SelectTrigger id="program" className="w-full h-11 text-sm font-medium">
-              <SelectValue placeholder="Pilih Jalur Registration" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="reguler">Program Reguler (Tahfidz 3 Juz)</SelectItem>
-              <SelectItem value="takhassus">Program Takhassus (Tahfidz 5+ Juz)</SelectItem>
-              <SelectItem value="pindahan">Mutasi / Siswa Pindahan</SelectItem>
-            </SelectContent>
-          </Select>
+          <Label htmlFor="parentName">Nama Orang Tua / Wali <span className="text-rose-500">*</span></Label>
+          <Input id="parentName" required placeholder="Nama Lengkap" className="h-11 rounded-none" />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="address">Alamat Lengkap Domisili <span className="text-rose-500">*</span></Label>
-          <Textarea 
-            id="address" 
-            required 
-            placeholder="Jl. Raya Utama No. 123, RT/RW, Kelurahan, Kecamatan..." 
-            className="min-h-[100px] resize-none p-3" 
-          />
+          <Label htmlFor="whatsappNumber">No. WhatsApp Aktif <span className="text-rose-500">*</span></Label>
+          <Input id="whatsappNumber" type="tel" required placeholder="0812-3456-7890" className="h-11 rounded-none" />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="previousSchool">Asal Sekolah Sebelumnya (Opsional)</Label>
+          <Input id="previousSchool" placeholder="Nama TK/PAUD" className="h-11 rounded-none" />
         </div>
 
         <div className="flex items-start space-x-3 pt-4">
-          <Checkbox id="terms" required className="mt-1" />
+          <Checkbox id="terms" required className="mt-1 rounded-none" />
           <div className="grid gap-1.5 leading-none">
             <Label
               htmlFor="terms"
               className="text-sm font-medium text-slate-700 dark:text-slate-300 leading-relaxed cursor-pointer"
             >
-              Saya menyetujui syarat &amp; ketentuan registration
+              Saya menyetujui syarat &amp; ketentuan pendaftaran
             </Label>
             <p className="text-xs text-slate-500">
-              Dengan ini saya menyatakan bahwa data yang diisi adalah benar dan dapat dipertanggungjawabkan.
+              Dengan ini saya menyatakan bahwa data kontak yang diisi adalah benar agar panitia dapat menghubungi saya.
             </p>
           </div>
         </div>
@@ -141,17 +115,17 @@ export function AdmissionsForm() {
           <Button 
             type="submit" 
             disabled={isSubmitting} 
-            className="w-full h-12 text-sm font-bold bg-slate-950 dark:bg-slate-50 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200"
+            className="w-full h-[52px] text-base font-bold bg-amber-500 hover:bg-amber-600 text-white rounded-none shadow-sm transition-all"
           >
             {isSubmitting ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Memproses Registration...
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                Memproses Pendaftaran...
               </>
             ) : (
               <>
-                <Send className="mr-2 h-4 w-4" />
-                Submit Form Registration
+                <Send className="mr-2 h-5 w-5" />
+                Kirim Pendaftaran
               </>
             )}
           </Button>
