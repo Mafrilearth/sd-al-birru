@@ -57,12 +57,11 @@ $$\text{Size}_n = 16\text{px} \times (1.250)^n$$
 - **Step +4 ($39.06\text{px} \to 40\text{px}$):** Display 2 / Judul halaman berita & tentang kami.
 - **Step +5 ($48.82\text{px} \to 48\text{px} - 58\text{px}$):** Display 1 / Hero headline berbobot tinggi.
 
-### 0.4 Teorema Geometri Konsentris (*Concentric Corner Radius Theorem*)
-Untuk komponen bersarang (misal tombol di dalam dock atau kartu solid), kelengkungan sudut wajib menaati rumus konsentris hardware Apple:
-$$\text{Radius Elemen Dalam} = \max(0, \text{Radius Elemen Luar} - \text{Padding Interstitial})$$
-- **Outer Dock $28\text{px}$ + Padding $6\text{px}$:** Inner Item = $28 - 6 = 22\text{px}$ (`concentric-dock-item`).
-- **Outer Card $24\text{px}$ (`rounded-3xl`) + Padding $8\text{px}$:** Inner Container = $24 - 8 = 16\text{px}$ (`rounded-2xl`).
-- **Capsule Invariant:** Elemen kapsul melayang memiliki kelengkungan tak hingga (`rounded-full` / $9999\text{px}$) yang selalu menjaga konsentrisitas sempurna di segala dimensi.
+### 0.4 Teorema Garis Lurus Mutlak (*Absolute Linear Theorem*)
+Untuk setiap komponen batas, kontainer, dan interaksi, garis lurus 90 derajat wajib dipertahankan.
+- **Tidak ada komponen bersarang (*nested corners*) yang melengkung.** 
+- Semua formasi dalam Bento Grid mengikuti tata letak potong bata (*masonry/block structure*) dengan `rounded-none`.
+- Pengecualian ditiadakan; batas kapsul dan tombol diubah menjadi balok struktural sempurna.
 
 ### 0.5 Ergonomi Layar Sentuh Fitts's Law (ISO 9241-11 & Apple HIG)
 - **Target Sentuh Minimum:** Setiap tombol, link navigasi, dan tab di perangkat sentuh wajib memiliki ukuran tap envelope minimal **$48\text{px} \times 48\text{px}$** (`min-h-[48px]`).
@@ -140,8 +139,8 @@ Salin token CSS variables berikut ke file `src/app/globals.css`:
     --input: 214 25% 91%;
     --ring: 38 92% 50%;               /* Golden Focus Ring */
 
-    /* Structural Radius */
-    --radius: 1rem;                   /* 16px - Smooth friendly corner */
+    /* Structural Radius - Zero Tolerance for Curves */
+    --radius: 0rem;                   /* 0px - Brutalist Sharp Edges */
   }
 
   .dark {
@@ -187,12 +186,10 @@ Salin token CSS variables berikut ke file `src/app/globals.css`:
 
 ## 3. Spatial & Surface Tokens (Grid, Radius, Elevation)
 
-### 3.1 Border Radius Tokens
-- **`rounded-lg` (8px):** Input form, dropdown item, pill tags kecil.
-- **`rounded-xl` (12px):** Tombol standar (*Buttons*), badge status, thumbnail kecil.
-- **`rounded-2xl` (16px):** Kartu Bento standar, modal popover, dialog konfirmasi.
-- **`rounded-3xl` (24px):** Kartu sorotan utama Hero, banner CTA pendaftaran, container galeri.
-- **`rounded-full` (9999px):** Tombol WhatsApp mengambang, avatar foto guru, badge akreditasi.
+### 3.1 Konstruksi Batas Mutlak (Zero-Radius Tokens)
+Dalam *Institutional Brutalism*, seluruh parameter *border radius* diatur ulang menjadi 0.
+- **`rounded-none` (0px):** Diterapkan tanpa pandang bulu pada: Input form, *dropdown item*, tombol aksi utama (*Buttons*), modal, *dialog*, *banner* peringatan, hingga *container* galeri.
+- Estetika dibangun murni dari ketebalan *border* (`border`, `border-2`) dan struktur bayangan tajam, bukan kelengkungan.
 
 ### 3.2 Elevation & Shadow Tokens
 - **`shadow-soft`:** `0 2px 8px -2px rgba(11, 15, 23, 0.05), 0 1px 4px -1px rgba(11, 15, 23, 0.03)`  
