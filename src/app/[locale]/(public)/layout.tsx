@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "@/app/globals.css";
 import { PublicNavbar } from "@/components/layout/PublicNavbar";
+import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
 import { PublicFooter } from "@/components/layout/PublicFooter";
 import { ScrollProgressBar } from "@/components/layout/ScrollProgressBar";
 import { FloatingWhatsApp } from "@/components/common/FloatingWhatsApp";
@@ -187,6 +188,7 @@ export default async function PublicRootLayout({
             <TooltipProvider>
               <ScrollProgressBar />
               <GlobalGrid />
+              <AnnouncementBanner />
               <PublicNavbar />
               <main id="main-content" tabIndex={-1} className="flex-1 flex flex-col outline-none">
                 {children}
