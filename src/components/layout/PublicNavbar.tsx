@@ -48,7 +48,7 @@ export function PublicNavbar() {
         <div className="flex justify-between lg:justify-start items-stretch h-16 border-x border-slate-200 dark:border-slate-800">
           
           {/* Left Section: Brand */}
-          <div className="flex items-center lg:w-[288px] pl-4 lg:pl-8 h-full lg:border-r border-slate-200 dark:border-slate-800">
+          <div className="flex items-center px-4 lg:px-8 h-full lg:border-r border-slate-200 dark:border-slate-800 shrink-0">
             <BrandLogo />
           </div>
 
@@ -59,7 +59,7 @@ export function PublicNavbar() {
                 <NavigationMenuItem className="h-full border-r border-slate-200 dark:border-slate-800">
                   <NavigationMenuLink render={
                     <Link href="/about" className={cn(
-                      "flex items-center justify-center w-[128px] h-full text-[11px] font-bold font-mono uppercase tracking-wider transition-colors select-none rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 outline-none focus:bg-slate-50 dark:focus:bg-slate-900/50",
+                      "flex items-center justify-center px-5 lg:px-6 h-full text-[11px] font-bold font-mono uppercase tracking-wider transition-colors select-none rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 outline-none focus:bg-slate-50 dark:focus:bg-slate-900/50 whitespace-nowrap",
                       pathname.startsWith("/about") ? "text-amber-600 dark:text-amber-500 bg-slate-50 dark:bg-slate-900/50" : "text-slate-600 dark:text-slate-400"
                     )} />
                   }>
@@ -70,7 +70,7 @@ export function PublicNavbar() {
                 <NavigationMenuItem className="h-full border-r border-slate-200 dark:border-slate-800">
                   <NavigationMenuLink render={
                     <Link href="/programs" className={cn(
-                      "flex items-center justify-center text-center w-[192px] h-full text-[11px] font-bold font-mono uppercase tracking-wider transition-colors select-none rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 outline-none focus:bg-slate-50 dark:focus:bg-slate-900/50",
+                      "flex items-center justify-center text-center px-5 lg:px-6 h-full text-[11px] font-bold font-mono uppercase tracking-wider transition-colors select-none rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 outline-none focus:bg-slate-50 dark:focus:bg-slate-900/50 whitespace-nowrap",
                       pathname.startsWith("/programs") ? "text-amber-600 dark:text-amber-500 bg-slate-50 dark:bg-slate-900/50" : "text-slate-600 dark:text-slate-400"
                     )} />
                   }>
@@ -79,7 +79,7 @@ export function PublicNavbar() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem className="h-full">
-                  <NavigationMenuTrigger className="flex items-center justify-center w-[192px] h-full text-[11px] font-bold font-mono uppercase tracking-wider rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-900/50 border-0 focus:bg-transparent text-slate-600 dark:text-slate-400">
+                  <NavigationMenuTrigger className="flex items-center justify-center px-5 lg:px-6 h-full text-[11px] font-bold font-mono uppercase tracking-wider rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-900/50 border-0 focus:bg-transparent text-slate-600 dark:text-slate-400 whitespace-nowrap">
                     Public Information
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -112,10 +112,10 @@ export function PublicNavbar() {
 
             {/* CTA Button (Desktop Only) */}
             <div className="hidden lg:flex items-center">
-              <Button asChild variant="default" className="w-[160px] h-full rounded-none bg-slate-950 hover:bg-slate-800 text-white font-bold font-mono uppercase text-xs group whitespace-nowrap">
-                <Link href="/contact">
+              <Button asChild variant="default" className="px-6 h-full rounded-none bg-slate-950 hover:bg-slate-800 text-white font-bold font-mono uppercase text-xs group whitespace-nowrap">
+                <Link href="/contact" className="flex items-center gap-2">
                   <span>{t("contact")}</span>
-                  <ArrowRight className="size-3.5 ml-2 group-hover:translate-x-1 transition-transform shrink-0" />
+                  <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
                 </Link>
               </Button>
             </div>
