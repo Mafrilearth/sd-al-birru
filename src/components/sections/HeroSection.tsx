@@ -16,7 +16,7 @@ export function HeroSection() {
   const t = useTranslations("Hero");
 
   return (
-    <section aria-labelledby="hero-title" className="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-36 lg:pt-36 lg:pb-44 bg-[#FDFDFB] dark:bg-slate-950 border-b border-slate-200/70">
+    <section aria-labelledby="hero-title" className="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-36 lg:pt-36 lg:pb-44 bg-transparent border-b border-slate-200/70">
       {/* Removed conflicting background dots to allow GlobalGrid to shine clearly */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
