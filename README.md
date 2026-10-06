@@ -27,6 +27,19 @@ We utilize Architecture Decision Records to historically document why a specific
 10. **[10-USER_JOURNEY_FLOWS.md](./docs/10-USER_JOURNEY_FLOWS.md):** Finite State Machines (FSM) mapped out in Mermaid for robust user interactions.
 11. **[11-API_CONTRACT_SPECIFICATIONS.md](./docs/11-API_CONTRACT_SPECIFICATIONS.md):** Zod schema validations and strict Frontend-to-Backend data contracts.
 12. **[12-FEATURE_SPECIFICATION_PPDB.md](./docs/12-FEATURE_SPECIFICATION_PPDB.md):** Spesifikasi teknis dan turunan implementasi khusus untuk fitur Pendaftaran PPDB.
+13. **[13-INTERNATIONALIZATION_ARCHITECTURE.md](./docs/13-INTERNATIONALIZATION_ARCHITECTURE.md):** Standar infrastruktur multibahasa (i18n), struktur kamus JSON, dan aturan *Right-to-Left* (RTL) untuk bahasa Arab.
+14. **[14-AUTHENTICATION_AND_AUTHORIZATION.md](./docs/14-AUTHENTICATION_AND_AUTHORIZATION.md):** Strategi keamanan tingkat tinggi menggunakan Auth.js (NextAuth) dan *Role-Based Access Control* (RBAC).
+15. **[15-SECURITY_AND_DATA_PRIVACY.md](./docs/15-SECURITY_AND_DATA_PRIVACY.md):** Standar pengamanan data privasi calon siswa (PII), sanitasi XSS, dan perlindungan terhadap *Spam/Bot*.
+
+### 5. Quality Assurance, DevOps & Observability
+16. **[16-TESTING_STRATEGY.md](./docs/16-TESTING_STRATEGY.md):** Standar pengujian perangkat lunak menggunakan Vitest (Unit) dan Playwright (E2E) untuk perlindungan *bug* otomatis.
+17. **[17-VERSION_CONTROL_AND_DEPLOYMENT_PIPELINE.md](./docs/17-VERSION_CONTROL_AND_DEPLOYMENT_PIPELINE.md):** Konvensi *Git Commit*, strategi *Trunk-Based Development*, dan pipa *CI/CD* Vercel.
+18. **[18-OBSERVABILITY_AND_MONITORING.md](./docs/18-OBSERVABILITY_AND_MONITORING.md):** Standar pengawasan sistem (*Maintenance phase*), pelacakan eror produksi, dan Vercel *Web Vitals*.
+
+### 6. Micro-Details & Optimizations
+19. **[19-ACCESSIBILITY_AND_SEO_STRATEGY.md](./docs/19-ACCESSIBILITY_AND_SEO_STRATEGY.md):** Aturan SEO, meta tag, dan pedoman aksesibilitas tunanetra (WCAG/ARIA).
+20. **[20-ENVIRONMENT_AND_SECRETS_MANAGEMENT.md](./docs/20-ENVIRONMENT_AND_SECRETS_MANAGEMENT.md):** Validasi variabel `.env` dengan Zod untuk mencegah kebocoran rahasia *database*.
+21. **[21-MEDIA_AND_ASSET_OPTIMIZATION.md](./docs/21-MEDIA_AND_ASSET_OPTIMIZATION.md):** Standar performa pemuatan gambar (`next/image`) dan tipografi (`next/font`).
 
 ---
 
