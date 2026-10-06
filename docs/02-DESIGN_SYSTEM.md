@@ -1,9 +1,9 @@
 # Al-Birru Signature Design System
 
 > **Versi:** 2.1.0 (Global Multidisciplinary Standards Edition)  
-> **Filosofi Fondasi:** Adaptive Utilitarian (Fungsional, Solid/Flat, dan Multidisiplin)  
-> **Bahasa Desain:** Technical Minimalism & Neo-Functionalism (Seamless Light/Dark Mode)  
-> **Kompatibilitas:** Tailwind CSS v4 + Motion v14 + shadcn/ui + WCAG 2.2 AAA Compliance  
+> **Filosofi Fondasi:** Technical Minimalism
+> **Bahasa Desain:** Institutional Brutalism
+> **Kompatibilitas:** Tailwind CSS v4 + Motion v14 + shadcn/ui + WCAG 2.2 AAA Compliance
 
 ---
 
