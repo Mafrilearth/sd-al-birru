@@ -11,6 +11,7 @@ import { ParallaxFloatingBadge } from "@/components/common/ParallaxFloatingBadge
 
 import { appleTapHaptic } from "@/lib/motion";
 import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   const t = useTranslations("Hero");
@@ -68,24 +69,22 @@ export function HeroSection() {
               className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto"
             >
               <motion.div whileTap={appleTapHaptic}>
-                <Link
-                  href="/contact"
- className="group flex items-center justify-center gap-2.5 bg-linear-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold px-7 h-13 rounded-none text-sm transition-all shadow-md shadow-amber-500/25 relative overflow-hidden"
-                >
-                  <Sparkles className="size-4 group-hover:rotate-12 transition-transform" />
-                  <span>{t("cta_primary")}</span>
-                  <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                <Button asChild className="group flex items-center justify-center gap-2.5 bg-linear-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold px-7 h-13 rounded-none text-sm transition-all shadow-md shadow-amber-500/25 relative overflow-hidden">
+                  <Link href="/contact">
+                    <Sparkles className="size-4 group-hover:rotate-12 transition-transform" />
+                    <span>{t("cta_primary")}</span>
+                    <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
               </motion.div>
 
               <motion.div whileTap={appleTapHaptic}>
-                <Link
-                  href="/programs"
-                  className="flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold px-6 h-13 rounded-none text-sm transition-all shadow-2xs"
-                >
-                  <BookOpen className="size-4 text-slate-500" />
-                  <span>{t("cta_secondary")}</span>
-                </Link>
+                <Button asChild variant="outline" className="flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold px-6 h-13 rounded-none text-sm transition-all shadow-2xs">
+                  <Link href="/programs">
+                    <BookOpen className="size-4 text-slate-500" />
+                    <span>{t("cta_secondary")}</span>
+                  </Link>
+                </Button>
               </motion.div>
             </motion.div>
           </motion.div>
