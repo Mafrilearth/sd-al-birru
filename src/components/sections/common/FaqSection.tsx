@@ -140,7 +140,7 @@ export function FaqSection() {
               <div className="absolute -bottom-1.5 -left-1.5 size-3 border border-amber-500 z-10 bg-white dark:bg-slate-950" />
               <div className="absolute -bottom-1.5 -right-1.5 size-3 border border-amber-500 z-10 bg-white dark:bg-slate-950" />
 
-              <Accordion type="single" collapsible defaultValue="faq-hours" className="bg-[#FDFDFB] dark:bg-slate-950 w-full space-y-[1px]">
+              <Accordion defaultValue="faq-hours" className="bg-[#FDFDFB] dark:bg-slate-950 w-full space-y-[1px]">
                 {faqs.map((faq) => (
                   <AccordionItem key={faq.id} value={faq.id} className="border-0 bg-white dark:bg-slate-900">
                     <AccordionTrigger className="w-full flex items-start justify-between gap-4 p-6 sm:p-8 hover:no-underline group data-open:bg-white dark:data-open:bg-slate-900 bg-[#FDFDFB] dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
