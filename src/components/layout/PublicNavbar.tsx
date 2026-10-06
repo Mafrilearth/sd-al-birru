@@ -44,11 +44,11 @@ export function PublicNavbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-      <div className="w-full max-w-7xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between xl:justify-start items-stretch h-16 border-x border-slate-200 dark:border-slate-800">
           
           {/* Left Section: Brand */}
-          <div className="flex items-center px-4 xl:px-6 h-full xl:border-r border-slate-200 dark:border-slate-800 shrink-0">
+          <div className="flex items-center h-full xl:border-r border-slate-200 dark:border-slate-800 shrink-0">
             <BrandLogo />
           </div>
 
