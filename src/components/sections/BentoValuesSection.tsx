@@ -83,7 +83,7 @@ export function BentoValuesSection() {
             </article>
 
             {/* Pillar 02: Adab & Akhlak (Span 5) */}
-            <article aria-labelledby="pillar-02-title" className="lg:col-span-5 bg-white dark:bg-slate-950 p-8 sm:p-12 flex flex-col justify-between group hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
+            <article aria-labelledby="pillar-02-title" className="lg:col-span-5 bg-white dark:bg-slate-950 p-8 sm:p-12 flex flex-col justify-between group hover:bg-cyan-50 dark:hover:bg-cyan-950/40 transition-colors">
               <div>
                 <div className="flex items-center justify-between mb-8">
                   <span className="font-mono text-xs font-bold text-slate-500 tracking-wider">
@@ -121,7 +121,7 @@ export function BentoValuesSection() {
             </article>
 
             {/* Pillar 03: Inkuiri Sains & Komputasi (Span 5) */}
-            <article aria-labelledby="pillar-03-title" className="lg:col-span-5 bg-white dark:bg-slate-950 p-8 sm:p-12 flex flex-col justify-between group hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
+            <article aria-labelledby="pillar-03-title" className="lg:col-span-5 bg-white dark:bg-slate-950 p-8 sm:p-12 flex flex-col justify-between group hover:bg-fuchsia-50 dark:hover:bg-fuchsia-950/40 transition-colors">
               <div>
                 <div className="flex items-center justify-between mb-8">
                   <span className="font-mono text-xs font-bold text-slate-500 tracking-wider">
@@ -144,7 +144,7 @@ export function BentoValuesSection() {
             </article>
 
             {/* Pillar 04: Ekosistem School Sehat (Span 7) */}
-            <article aria-labelledby="pillar-04-title" className="lg:col-span-7 bg-white dark:bg-slate-950 p-8 sm:p-12 flex flex-col justify-between group hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
+            <article aria-labelledby="pillar-04-title" className="lg:col-span-7 bg-white dark:bg-slate-950 p-8 sm:p-12 flex flex-col justify-between group hover:bg-lime-50 dark:hover:bg-lime-950/40 transition-colors">
               <div>
                 <div className="flex items-center justify-between mb-8">
                   <span className="font-mono text-xs font-bold text-slate-500 tracking-wider">
