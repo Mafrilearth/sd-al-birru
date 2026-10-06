@@ -17,18 +17,39 @@ import {
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 import { ConfettiCelebration } from "@/components/common/ConfettiCelebration";
 
+import { submitPpdbRegistration } from "@/app/actions/ppdb";
+import { PpdbSubmissionPayload } from "@/lib/validations/ppdb";
+
 export function AdmissionsForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    const formData = new FormData(e.currentTarget);
+    const payload: PpdbSubmissionPayload = {
+      studentName: formData.get("studentName") as string,
+      parentName: formData.get("parentName") as string,
+      whatsappNumber: formData.get("whatsappNumber") as string,
+      previousSchool: (formData.get("previousSchool") as string) || "",
+    };
+
+    try {
+      const response = await submitPpdbRegistration(payload);
+      if (response.success) {
+        setIsSuccess(true);
+      } else {
+        setErrorMessage(response.message);
+      }
+    } catch (error) {
+      setErrorMessage("Terjadi kesalahan sistem. Silakan coba lagi.");
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1500);
+    }
   };
 
   if (isSuccess) {
@@ -43,18 +64,18 @@ export function AdmissionsForm() {
             <CheckCircle2 className="size-8 text-emerald-600 dark:text-emerald-400" />
           </div>
           <h3 className="text-2xl font-black text-slate-950 dark:text-slate-50 tracking-tight">
-            Registration Diterima!
+            Pendaftaran Diterima!
           </h3>
           <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
-            Alhamdulillah, data registration ananda telah masuk ke sistem kami. 
-            Committee Admissions akan menghubungi Anda via WhatsApp dalam 1x24 jam untuk tahapan selanjutnya.
+            Alhamdulillah, data pendaftaran ananda telah masuk ke sistem kami. 
+            Panitia PPDB akan menghubungi Anda via WhatsApp dalam 1x24 jam untuk tahapan selanjutnya.
           </p>
           <Button
             onClick={() => setIsSuccess(false)}
             variant="outline"
-            className="mt-4"
+            className="mt-4 rounded-none"
           >
-            Daftarkan Calon Students Lainnya
+            Daftarkan Calon Siswa Lainnya
           </Button>
         </div>
       </SpotlightCard>
@@ -78,26 +99,26 @@ export function AdmissionsForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
           <Label htmlFor="studentName">Nama Lengkap Calon Siswa <span className="text-rose-500">*</span></Label>
-          <Input id="studentName" required placeholder="Sesuai Akta Kelahiran" className="h-11 rounded-none" />
+          <Input id="studentName" name="studentName" required placeholder="Sesuai Akta Kelahiran" className="h-11 rounded-none" />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="parentName">Nama Orang Tua / Wali <span className="text-rose-500">*</span></Label>
-          <Input id="parentName" required placeholder="Nama Lengkap" className="h-11 rounded-none" />
+          <Input id="parentName" name="parentName" required placeholder="Nama Lengkap" className="h-11 rounded-none" />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="whatsappNumber">No. WhatsApp Aktif <span className="text-rose-500">*</span></Label>
-          <Input id="whatsappNumber" type="tel" required placeholder="0812-3456-7890" className="h-11 rounded-none" />
+          <Input id="whatsappNumber" name="whatsappNumber" type="tel" required placeholder="0812-3456-7890" className="h-11 rounded-none" />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="previousSchool">Asal Sekolah Sebelumnya (Opsional)</Label>
-          <Input id="previousSchool" placeholder="Nama TK/PAUD" className="h-11 rounded-none" />
+          <Input id="previousSchool" name="previousSchool" placeholder="Nama TK/PAUD" className="h-11 rounded-none" />
         </div>
 
         <div className="flex items-start space-x-3 pt-4">
-          <Checkbox id="terms" required className="mt-1 rounded-none" />
+          <Checkbox id="terms" name="terms" required className="mt-1 rounded-none" />
           <div className="grid gap-1.5 leading-none">
             <Label
               htmlFor="terms"
@@ -110,6 +131,12 @@ export function AdmissionsForm() {
             </p>
           </div>
         </div>
+
+        {errorMessage && (
+          <div className="p-3 bg-rose-50 border border-rose-200 text-rose-600 text-sm rounded-none">
+            {errorMessage}
+          </div>
+        )}
 
         <div className="pt-6">
           <Button 
