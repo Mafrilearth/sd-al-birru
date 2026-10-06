@@ -32,10 +32,10 @@ export function AdmissionsForm() {
 
     const formData = new FormData(e.currentTarget);
     const payload: AdmissionsSubmissionPayload = {
-      studentName: formData.get("studentName") as string,
-      parentName: formData.get("parentName") as string,
-      whatsappNumber: formData.get("whatsappNumber") as string,
-      previousSchool: (formData.get("previousSchool") as string) || "",
+      applicantName: formData.get("applicantName") as string,
+      guardianName: formData.get("guardianName") as string,
+      phoneNumber: formData.get("phoneNumber") as string,
+      previousInstitution: (formData.get("previousInstitution") as string) || "",
     };
 
     try {
@@ -98,23 +98,23 @@ export function AdmissionsForm() {
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
-          <Label htmlFor="studentName">Nama Lengkap Calon Siswa <span className="text-rose-500">*</span></Label>
-          <Input id="studentName" name="studentName" required placeholder="Sesuai Akta Kelahiran" className="h-11 rounded-none" />
+          <Label htmlFor="applicantName">Nama Lengkap Calon Siswa <span className="text-rose-500">*</span></Label>
+          <Input id="applicantName" name="applicantName" required placeholder="Sesuai Akta Kelahiran" className="h-11 rounded-none" />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="parentName">Nama Orang Tua / Wali <span className="text-rose-500">*</span></Label>
-          <Input id="parentName" name="parentName" required placeholder="Nama Lengkap" className="h-11 rounded-none" />
+          <Label htmlFor="guardianName">Nama Orang Tua / Wali <span className="text-rose-500">*</span></Label>
+          <Input id="guardianName" name="guardianName" required placeholder="Nama Lengkap" className="h-11 rounded-none" />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="whatsappNumber">No. WhatsApp Aktif <span className="text-rose-500">*</span></Label>
-          <Input id="whatsappNumber" name="whatsappNumber" type="tel" required placeholder="0812-3456-7890" className="h-11 rounded-none" />
+          <Label htmlFor="phoneNumber">No. Telepon / WhatsApp <span className="text-rose-500">*</span></Label>
+          <Input id="phoneNumber" name="phoneNumber" type="tel" required placeholder="0812-3456-7890" className="h-11 rounded-none" />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="previousSchool">Asal Sekolah Sebelumnya (Opsional)</Label>
-          <Input id="previousSchool" name="previousSchool" placeholder="Nama TK/PAUD" className="h-11 rounded-none" />
+          <Label htmlFor="previousInstitution">Asal Sekolah Sebelumnya (Opsional)</Label>
+          <Input id="previousInstitution" name="previousInstitution" placeholder="Nama TK/PAUD" className="h-11 rounded-none" />
         </div>
 
         <div className="flex items-start space-x-3 pt-4">

@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustPartnerMarquee } from "@/components/sections/common/TrustPartnerMarquee";
 import { WelcomeSection } from "@/components/sections/WelcomeSection";
 import { BentoValuesSection } from "@/components/sections/BentoValuesSection";
+import { AcademicProgramsSection } from "@/components/sections/AcademicProgramsSection";
 import { LatestNewsPreview } from "@/components/sections/LatestNewsPreview";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FaqSection } from "@/components/sections/common/FaqSection";
@@ -31,6 +32,7 @@ export default function HomePage() {
       <TrustPartnerMarquee />
       <WelcomeSection />
       <BentoValuesSection />
+      <AcademicProgramsSection />
       <LatestNewsPreview />
       <TestimonialsSection />
       <FaqSection />

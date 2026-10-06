@@ -55,13 +55,13 @@ export const news = pgTable('news', {
 
 // Admissions Form Table (PPDB replaced by global term)
 // Dirancang dengan filosofi Hick's Law: Hanya meminta data yang absolut krusial di tahap awal pendaftaran
-export const admissionsRegistrations = pgTable('admissions_registrations', {
+export const applications = pgTable('applications', {
   id: uuid('id').primaryKey().defaultRandom(),
-  registrationNumber: text('registration_number').notNull().unique(), // Format: ADM26-XXXX
-  studentName: text('student_name').notNull(),
-  parentName: text('parent_name').notNull(),
-  whatsappNumber: text('whatsapp_number').notNull(), // Kontak krusial untuk follow-up
-  previousSchool: text('previous_school'), // Asal sekolah TK/PAUD (opsional di awal)
+  applicationNumber: text('application_number').notNull().unique(), // Format: APP26-XXXX
+  applicantName: text('applicant_name').notNull(),
+  guardianName: text('guardian_name').notNull(),
+  phoneNumber: text('phone_number').notNull(), // Kontak krusial untuk follow-up
+  previousInstitution: text('previous_institution'), // Asal institusi (opsional di awal)
   status: text('status').default('PENDING').notNull(), // PENDING, REVIEWED, ACCEPTED, REJECTED
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
