@@ -38,7 +38,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-28 bg-transparent border-t border-slate-200/70 dark:border-slate-800/70 overflow-hidden relative">
+    <section className="py-28 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200/70 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up" className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-black text-slate-950 dark:text-slate-50 tracking-tight">

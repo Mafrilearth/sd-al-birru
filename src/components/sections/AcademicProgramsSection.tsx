@@ -31,7 +31,7 @@ const programs = [
 
 export function AcademicProgramsSection() {
   return (
-    <section aria-labelledby="programs-heading" className="py-20 md:py-28 bg-[#FDFDFB] dark:bg-slate-950 border-b border-slate-200/70">
+    <section aria-labelledby="programs-heading" className="py-20 md:py-28 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

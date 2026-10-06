@@ -31,7 +31,7 @@ const fitrahPillars = [
 
 export function WelcomeSection() {
   return (
-    <section aria-labelledby="welcome-heading" className="py-28 md:py-36 lg:py-44 bg-transparent border-b border-slate-200/70 relative overflow-hidden">
+    <section aria-labelledby="welcome-heading" className="py-28 md:py-36 lg:py-44 bg-slate-50 dark:bg-slate-900/30 border-b border-slate-200/70 relative overflow-hidden">
       {/* Removed conflicting background dots to allow GlobalGrid to shine clearly */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
