@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "@/app/globals.css";
 import { PublicNavbar } from "@/components/layout/PublicNavbar";
 import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
@@ -14,6 +14,12 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "800"],
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sdalbirru.sch.id";
@@ -159,7 +165,7 @@ export default async function PublicRootLayout({
   return (
     <html
       lang={locale}
-      className={`${spaceGrotesk.variable} font-sans h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
