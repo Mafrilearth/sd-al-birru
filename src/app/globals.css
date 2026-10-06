@@ -49,15 +49,15 @@
 }
 
 :root {
-  --background: oklch(0.992 0.005 85);       /* #FDFDFB - Soft Alabaster */
-  --foreground: oklch(0.18 0.025 240);       /* #0F172A - Deep Charcoal Text */
-  --card: oklch(1 0 0);                      /* Pure Crisp White Card */
+  --background: oklch(0.992 0.005 85);       /* #FDFDFB - Slate 50 */
+  --foreground: oklch(0.18 0.025 240);       /* #0F172A - Slate 900 */
+  --card: oklch(1 0 0);                      /* #FFFFFF - White */
   --card-foreground: oklch(0.18 0.025 240);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.025 240);
-  --primary: oklch(0.75 0.18 75);            /* #F59E0B - Al-Birru Solar Gold */
-  --primary-foreground: oklch(0.14 0.03 240);/* High-contrast dark text on gold */
-  --secondary: oklch(0.96 0.045 85);         /* #FEF3C7 - Warm Amber Tint */
+  --primary: oklch(0.75 0.18 75);            /* #F59E0B - Amber 500 */
+  --primary-foreground: oklch(0.14 0.03 240);/* #020617 - Slate 950 */
+  --secondary: oklch(0.96 0.045 85);         /* #FEF3C7 - Amber 100 */
   --secondary-foreground: oklch(0.4 0.12 70);
   --muted: oklch(0.96 0.01 240);
   --muted-foreground: oklch(0.5 0.02 240);
@@ -66,13 +66,13 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.01 240);
   --input: oklch(0.92 0.01 240);
-  --ring: oklch(0.75 0.18 75);               /* Golden focus ring */
+  --ring: oklch(0.75 0.18 75);               /* Amber 500 */
   --chart-1: oklch(0.75 0.18 75);
-  --chart-2: oklch(0.42 0.12 165);           /* Islamic Emerald */
+  --chart-2: oklch(0.42 0.12 165);           /* Emerald 800 */
   --chart-3: oklch(0.556 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0rem;                            /* Utilitarian Grid: Strict square corners globally */
+  --radius: 0rem;                            /* 0px */
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.75 0.18 75);

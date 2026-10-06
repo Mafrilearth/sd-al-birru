@@ -83,13 +83,13 @@ Perpaduan warna ini diekstraksi langsung dari identitas resmi **SD Al-Birru Tahf
 
 | Token Name | Hex Code | HSL Value | Peran & Penggunaan |
 | :--- | :--- | :--- | :--- |
-| **`brand-gold`** *(Logo Primary)* | `#F59E0B` | `hsl(38, 92%, 50%)` | Aksen brand utama, tombol aksi utama (CTA), badge sorotan, dan ikon unggulan. |
-| **`brand-gold-hover`** | `#D97706` | `hsl(37, 91%, 44%)` | Status hover interaktif untuk elemen emas. |
-| **`brand-gold-subtle`** | `#FEF3C7` | `hsl(48, 96%, 89%)` | Background kartu highlight, notifikasi sukses, dan pill tags. |
-| **`brand-slate-dark`** *(Logo Shield)* | `#0B0F17` | `hsl(220, 35%, 7%)` | Latar belakang footer, hero dark accents, teks judul berbobot tinggi. |
-| **`brand-slate-medium`** | `#1E293B` | `hsl(215, 28%, 17%)` | Border elegan, teks sekunder, dan kartu gelap. |
-| **`brand-canvas`** *(Clean White)* | `#FDFDFB` | `hsl(60, 20%, 99%)` | Kanvas latar belakang utama (putih gading lembut, nyaman di mata). |
-| **`brand-emerald`** *(Tahfidz Accent)* | `#065F46` | `hsl(163, 88%, 20%)` | Khusus untuk lencana program keislaman (*Tahfidzul Qur'an*, Ibadah Praktik). |
+| **`amber-500`** | `#F59E0B` | `hsl(38, 92%, 50%)` | Aksen primer, tombol aksi utama (CTA), badge sorotan. |
+| **`amber-600`** | `#D97706` | `hsl(37, 91%, 44%)` | Status hover interaktif untuk elemen aksi primer. |
+| **`amber-100`** | `#FEF3C7` | `hsl(48, 96%, 89%)` | Background kartu sekunder, notifikasi, dan pill tags. |
+| **`slate-900`** | `#0F172A` | `hsl(222, 47%, 11%)` | Latar belakang footer, hero dark accents, teks judul utama. |
+| **`slate-800`** | `#1E293B` | `hsl(215, 28%, 17%)` | Border tegas, teks sekunder, dan background mode gelap. |
+| **`slate-50`** | `#F8FAFC` | `hsl(210, 40%, 98%)` | Kanvas latar belakang utama (mode terang). |
+| **`emerald-800`** | `#065F46` | `hsl(163, 88%, 20%)` | Lencana program spesifik dan indikator status berhasil. |
 
 ---
 
