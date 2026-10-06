@@ -79,9 +79,9 @@ export function HeroSection() {
               </motion.div>
 
               <motion.div whileTap={appleTapHaptic}>
-                <Button asChild variant="outline" className="flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold px-6 h-13 rounded-none text-sm transition-all shadow-2xs">
+                <Button asChild variant="outline" className="flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-white font-semibold px-6 h-13 rounded-none text-sm transition-all shadow-2xs">
                   <Link href="/programs">
-                    <BookOpen className="size-4 text-slate-500" />
+                    <BookOpen className="size-4 text-slate-500 dark:text-slate-300" />
                     <span>{t("cta_secondary")}</span>
                   </Link>
                 </Button>
@@ -102,7 +102,7 @@ export function HeroSection() {
               <SpotlightCard className="p-2 shadow-xs hover:shadow-lg transition-all relative rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
                 <BorderBeam size={220} duration={10} colorFrom="#f59e0b" colorTo="#10b981" />
 
-                <div className="aspect-[4/3] rounded-none bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 p-6 flex flex-col justify-between relative overflow-hidden group">
+                <div className="aspect-[4/3] rounded-none bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 p-6 flex flex-col justify-between relative overflow-hidden group">
                   {/* Subtle Blueprint Grid */}
                   <div
                     aria-hidden="true"

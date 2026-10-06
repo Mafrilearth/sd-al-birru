@@ -44,7 +44,7 @@ export function BentoValuesSection() {
           {/* Grid Container */}
           <div className="grid grid-cols-1 lg:grid-cols-12 bg-slate-200 dark:bg-slate-800 gap-[1px] border border-slate-200 dark:border-slate-800">
             {/* Pillar 01: Tahfidzul Qur'an (Span 7) */}
-            <article aria-labelledby="pillar-01-title" className="lg:col-span-7 bg-slate-950 p-8 sm:p-12 flex flex-col justify-between relative group overflow-hidden">
+            <article aria-labelledby="pillar-01-title" className="lg:col-span-7 bg-slate-950 dark:bg-slate-900 p-8 sm:p-12 flex flex-col justify-between relative group overflow-hidden">
               <BorderBeam size={220} duration={12} colorFrom="#f59e0b" colorTo="#334155" />
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-8">

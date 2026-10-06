@@ -34,7 +34,7 @@ export function CTASection({
             <div className="absolute -bottom-1.5 -left-1.5 size-3 border border-amber-500 z-20 bg-[#FDFDFB] dark:bg-slate-950" />
             <div className="absolute -bottom-1.5 -right-1.5 size-3 border border-amber-500 z-20 bg-[#FDFDFB] dark:bg-slate-950" />
 
-            <div className="bg-slate-950 text-white border border-slate-200 dark:border-slate-800 relative overflow-hidden">
+            <div className="bg-slate-950 dark:bg-slate-900 text-white border border-slate-200 dark:border-slate-800 relative overflow-hidden">
               <BorderBeam size={260} duration={14} colorFrom="#f59e0b" colorTo="#10b981" />
               {/* Removed conflicting background dots to allow GlobalGrid to shine clearly */}
 
@@ -65,7 +65,7 @@ export function CTASection({
                   </Link>
                 </Button>
 
-                <Button asChild variant="outline" className="w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-100 font-semibold px-7 h-13 rounded-none transition-all text-base group">
+                <Button asChild variant="outline" className="w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-700 dark:border-slate-300 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-200 text-slate-100 dark:text-slate-950 font-semibold px-7 h-13 rounded-none transition-all text-base group">
                   <a
                     href="https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20SD%20Al-Birru,%20saya%20ingin%20konsultasi%20PPDB%20Tahun%20Ajaran%202026/2027."
                     target="_blank"
