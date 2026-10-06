@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "@/app/globals.css";
 import { PublicNavbar } from "@/components/layout/PublicNavbar";
 import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
@@ -10,10 +10,10 @@ import { FloatingWhatsApp } from "@/components/common/FloatingWhatsApp";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { GlobalGrid } from "@/components/common/GlobalGrid";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sdalbirru.sch.id";
@@ -159,7 +159,7 @@ export default async function PublicRootLayout({
   return (
     <html
       lang={locale}
-      className={`${plusJakartaSans.variable} font-sans h-full antialiased`}
+      className={`${spaceGrotesk.variable} font-sans h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
