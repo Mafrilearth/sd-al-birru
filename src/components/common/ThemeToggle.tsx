@@ -13,7 +13,7 @@ export function ThemeToggle() {
     <motion.button
       whileTap={appleTapHaptic}
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="hidden sm:flex size-9 items-center justify-center rounded-none border border-slate-200/80 dark:border-slate-700/80 bg-white/70 dark:border-slate-800/80 dark:bg-slate-900/70 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 transition-all shadow-2xs"
+      className="hidden sm:flex w-16 h-full items-center justify-center rounded-none border-0 bg-transparent text-slate-500 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-900/50 dark:hover:text-slate-100 transition-colors"
       aria-label="Toggle dark mode"
     >
       <Sun className="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

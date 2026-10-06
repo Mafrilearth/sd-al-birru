@@ -27,21 +27,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-interface NavLinkItem {
-  label: string;
-  href: string;
-  description?: string;
-}
-
 export function PublicNavbar() {
   const pathname = usePathname();
   const t = useTranslations("Navigation");
-
-  const informasiLinks: NavLinkItem[] = [
-    { label: t("news"), href: "/news", description: "News terbaru dan pengumuman school." },
-    { label: "Gallery", href: "/gallery", description: "Gallery foto kegiatan students." },
-    { label: t("contact"), href: "/contact", description: "Alamat, peta, dan kontak resmi." },
-  ];
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
@@ -79,26 +67,26 @@ export function PublicNavbar() {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem className="h-full">
-                  <NavigationMenuTrigger className="flex items-center justify-center px-5 xl:px-6 h-full text-[11px] font-bold font-mono uppercase tracking-wider rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-900/50 border-0 focus:bg-transparent text-slate-600 dark:text-slate-400 whitespace-nowrap">
-                    Public Information
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[320px] gap-0 p-0 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-none shadow-xl">
-                      {informasiLinks.map((link) => (
-                        <li key={link.href} className="border-b border-slate-200 dark:border-slate-800 last:border-0">
-                          <NavigationMenuLink render={
-                            <Link href={link.href} className="block select-none space-y-1 p-6 leading-none no-underline outline-none transition-colors hover:bg-slate-50 dark:hover:bg-slate-900 focus:bg-slate-50 dark:focus:bg-slate-900" />
-                          }>
-                            <div className="text-xs font-bold leading-none font-mono text-slate-900 dark:text-slate-100 uppercase tracking-wider">{link.label}</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400 font-sans">
-                              {link.description}
-                            </p>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
+                <NavigationMenuItem className="h-full border-r border-slate-200 dark:border-slate-800">
+                  <NavigationMenuLink render={
+                    <Link href="/news" className={cn(
+                      "flex items-center justify-center text-center px-5 xl:px-6 h-full text-[11px] font-bold font-mono uppercase tracking-wider transition-colors select-none rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 outline-none focus:bg-slate-50 dark:focus:bg-slate-900/50 whitespace-nowrap",
+                      pathname.startsWith("/news") ? "text-amber-600 dark:text-amber-500 bg-slate-50 dark:bg-slate-900/50" : "text-slate-600 dark:text-slate-400"
+                    )} />
+                  }>
+                    {t("news")}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem className="h-full border-r border-slate-200 dark:border-slate-800">
+                  <NavigationMenuLink render={
+                    <Link href="/gallery" className={cn(
+                      "flex items-center justify-center text-center px-5 xl:px-6 h-full text-[11px] font-bold font-mono uppercase tracking-wider transition-colors select-none rounded-none bg-transparent hover:bg-slate-50 dark:hover:bg-slate-900/50 outline-none focus:bg-slate-50 dark:focus:bg-slate-900/50 whitespace-nowrap",
+                      pathname.startsWith("/gallery") ? "text-amber-600 dark:text-amber-500 bg-slate-50 dark:bg-slate-900/50" : "text-slate-600 dark:text-slate-400"
+                    )} />
+                  }>
+                    Gallery
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
@@ -107,7 +95,7 @@ export function PublicNavbar() {
           {/* Right Section: Mobile Menu, Locale, & CTA */}
           <div className="flex items-stretch divide-x divide-slate-200 dark:divide-slate-800 border-l border-slate-200 dark:border-slate-800">
             {/* Theme Toggle & Locale Switcher */}
-            <div className="hidden sm:flex items-center gap-2 px-4">
+            <div className="hidden sm:flex items-stretch divide-x divide-slate-200 dark:divide-slate-800">
               <ThemeToggle />
               <LocaleSwitcher />
             </div>
@@ -144,14 +132,15 @@ export function PublicNavbar() {
                     <Link href="/programs" className="px-6 py-4 text-sm font-bold font-mono uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors">
                       {t("programs")}
                     </Link>
-                    <div className="px-6 py-4 text-xs font-bold font-mono uppercase tracking-wider text-slate-500 mt-4">
-                      Public Information
-                    </div>
-                    {informasiLinks.map(link => (
-                      <Link key={link.href} href={link.href} className="px-6 py-3 text-sm text-slate-700 dark:text-slate-300 hover:text-amber-600 transition-colors">
-                        {link.label}
-                      </Link>
-                    ))}
+                    <Link href="/news" className="px-6 py-4 text-sm font-bold font-mono uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors">
+                      {t("news")}
+                    </Link>
+                    <Link href="/gallery" className="px-6 py-4 text-sm font-bold font-mono uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors">
+                      Gallery
+                    </Link>
+                    <Link href="/contact" className="px-6 py-4 text-sm font-bold font-mono uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors text-amber-600">
+                      {t("contact")}
+                    </Link>
                   </div>
                   <div className="p-6 border-t border-slate-200 dark:border-slate-800 mt-auto">
                     <Button asChild className="w-full rounded-none bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold font-mono uppercase">

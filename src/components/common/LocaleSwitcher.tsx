@@ -12,10 +12,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export const locales = [
-  { code: "id", label: "IND" },
-  { code: "en", label: "ENG" },
-  { code: "ar", label: "ARA" },
-  { code: "ja", label: "JPN" },
+  { code: "id-ID", label: "IND" },
+  { code: "en-US", label: "ENG" },
+  { code: "ar-SA", label: "ARA" },
+  { code: "ja-JP", label: "JPN" },
 ];
 
 export function LocaleSwitcher() {
