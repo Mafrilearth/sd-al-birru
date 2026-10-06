@@ -17,8 +17,8 @@ import {
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 import { ConfettiCelebration } from "@/components/common/ConfettiCelebration";
 
-import { submitPpdbRegistration } from "@/app/actions/ppdb";
-import { PpdbSubmissionPayload } from "@/lib/validations/ppdb";
+import { submitAdmissionsRegistration } from "@/app/actions/admissions";
+import { AdmissionsSubmissionPayload } from "@/lib/validations/admissions";
 
 export function AdmissionsForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,7 +31,7 @@ export function AdmissionsForm() {
     setErrorMessage(null);
 
     const formData = new FormData(e.currentTarget);
-    const payload: PpdbSubmissionPayload = {
+    const payload: AdmissionsSubmissionPayload = {
       studentName: formData.get("studentName") as string,
       parentName: formData.get("parentName") as string,
       whatsappNumber: formData.get("whatsappNumber") as string,
@@ -39,7 +39,7 @@ export function AdmissionsForm() {
     };
 
     try {
-      const response = await submitPpdbRegistration(payload);
+      const response = await submitAdmissionsRegistration(payload);
       if (response.success) {
         setIsSuccess(true);
       } else {

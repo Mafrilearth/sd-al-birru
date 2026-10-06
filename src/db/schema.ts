@@ -53,11 +53,11 @@ export const news = pgTable('news', {
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
-// Pendaftaran PPDB Table (Admissions Form)
+// Admissions Form Table (PPDB replaced by global term)
 // Dirancang dengan filosofi Hick's Law: Hanya meminta data yang absolut krusial di tahap awal pendaftaran
-export const ppdbRegistrations = pgTable('ppdb_registrations', {
+export const admissionsRegistrations = pgTable('admissions_registrations', {
   id: uuid('id').primaryKey().defaultRandom(),
-  registrationNumber: text('registration_number').notNull().unique(), // Format: PPDB26-XXXX
+  registrationNumber: text('registration_number').notNull().unique(), // Format: ADM26-XXXX
   studentName: text('student_name').notNull(),
   parentName: text('parent_name').notNull(),
   whatsappNumber: text('whatsapp_number').notNull(), // Kontak krusial untuk follow-up

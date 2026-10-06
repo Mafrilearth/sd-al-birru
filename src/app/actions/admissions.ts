@@ -1,16 +1,16 @@
 "use server";
 
 import { db } from "@/db";
-import { ppdbRegistrations } from "@/db/schema";
-import { PpdbSubmissionSchema, ActionResponse, PpdbSubmissionPayload } from "@/lib/validations/ppdb";
+import { admissionsRegistrations } from "@/db/schema";
+import { AdmissionsSubmissionSchema, ActionResponse, AdmissionsSubmissionPayload } from "@/lib/validations/admissions";
 import { revalidatePath } from "next/cache";
 
-export async function submitPpdbRegistration(
-  payload: PpdbSubmissionPayload
+export async function submitAdmissionsRegistration(
+  payload: AdmissionsSubmissionPayload
 ): Promise<ActionResponse<{ registrationNumber: string }>> {
   try {
     // 1. Zod Validation (The Firewall)
-    const validatedFields = PpdbSubmissionSchema.safeParse(payload);
+    const validatedFields = AdmissionsSubmissionSchema.safeParse(payload);
 
     if (!validatedFields.success) {
       return {
@@ -27,7 +27,7 @@ export async function submitPpdbRegistration(
     const { studentName, parentName, whatsappNumber, previousSchool } = validatedFields.data;
 
     // 3. Database Insertion (Type-Safe via Drizzle)
-    await db.insert(ppdbRegistrations).values({
+    await db.insert(admissionsRegistrations).values({
       registrationNumber,
       studentName,
       parentName,
@@ -37,7 +37,7 @@ export async function submitPpdbRegistration(
     });
 
     // 4. Revalidate cache if there is an admin dashboard
-    revalidatePath("/admin/ppdb");
+    revalidatePath("/admin/admissions");
 
     // 5. Success Response
     return {

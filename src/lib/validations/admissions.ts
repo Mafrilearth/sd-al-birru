@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const PpdbSubmissionSchema = z.object({
+export const AdmissionsSubmissionSchema = z.object({
   studentName: z.string().min(3, "Nama siswa terlalu pendek").max(100, "Nama siswa terlalu panjang"),
   parentName: z.string().min(3, "Nama wali terlalu pendek").max(100, "Nama wali terlalu panjang"),
   whatsappNumber: z
@@ -11,7 +11,7 @@ export const PpdbSubmissionSchema = z.object({
   previousSchool: z.string().max(100).optional().or(z.literal("")),
 });
 
-export type PpdbSubmissionPayload = z.infer<typeof PpdbSubmissionSchema>;
+export type AdmissionsSubmissionPayload = z.infer<typeof AdmissionsSubmissionSchema>;
 
 export type ActionResponse<T> =
   | { success: true; data: T; message: string }
