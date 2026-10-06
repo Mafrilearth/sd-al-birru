@@ -59,6 +59,7 @@ function Button({
       render={asChild && React.isValidElement(children) ? children : undefined}
       {...(asChild ? {} : { children })}
       {...props}
+      {...(asChild ? { nativeButton: false } : {})}
     />
   )
 }
