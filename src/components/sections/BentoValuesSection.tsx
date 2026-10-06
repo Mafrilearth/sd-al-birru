@@ -44,19 +44,19 @@ export function BentoValuesSection() {
           {/* Grid Container */}
           <div className="grid grid-cols-1 lg:grid-cols-12 bg-slate-200 dark:bg-slate-800 gap-[1px] border border-slate-200 dark:border-slate-800">
             {/* Pillar 01: Tahfidzul Qur'an (Span 7) */}
-            <article aria-labelledby="pillar-01-title" className="lg:col-span-7 bg-slate-950 dark:bg-slate-900 p-8 sm:p-12 flex flex-col justify-between relative group overflow-hidden">
+            <article aria-labelledby="pillar-01-title" className="lg:col-span-7 bg-white dark:bg-slate-900 p-8 sm:p-12 flex flex-col justify-between relative group overflow-hidden">
               <BorderBeam size={220} duration={12} colorFrom="#f59e0b" colorTo="#334155" />
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-8">
-                  <span className="font-mono text-xs font-bold text-slate-400 tracking-wider">
+                  <span className="font-mono text-xs font-bold text-slate-500 dark:text-slate-400 tracking-wider">
                     PILAR 01
                   </span>
                   <BookMarked className="size-5 text-slate-400 group-hover:text-amber-500 transition-colors" />
                 </div>
-                <h3 id="pillar-01-title" className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-snug">
+                <h3 id="pillar-01-title" className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight leading-snug">
                   Metode Talaqqi Bersanad &amp; Muroja&apos;ah Mandiri
                 </h3>
-                <p className="mt-5 text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                <p className="mt-5 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
                   Students dibimbing secara intensif dalam halaqah pagi untuk menguasai makharijul huruf
                   dan kaidah tajwid yang benar. Evaluasi hafalan dilakukan melalui ujian tasmi&apos;
                   terbuka per juz disaksikan langsung oleh orang tua.

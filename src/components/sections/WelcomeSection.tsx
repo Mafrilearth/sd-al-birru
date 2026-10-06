@@ -136,10 +136,10 @@ export function WelcomeSection() {
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <Link
                   href="/about"
-                  className="group inline-flex items-center gap-2 border border-slate-900 bg-slate-900 text-white hover:bg-slate-800 font-bold px-6 h-12 rounded-none text-xs sm:text-sm transition-all hover:scale-[1.01] active:scale-[0.99] shadow-2xs"
+                  className="group inline-flex items-center gap-2 border border-transparent bg-amber-500 text-slate-950 hover:bg-amber-600 font-bold px-6 h-12 rounded-none text-xs sm:text-sm transition-all hover:scale-[1.01] active:scale-[0.99] shadow-2xs"
                 >
                   <span>Pelajari About &amp; Sejarah Al-Birru</span>
-                  <ArrowRight className="size-3.5 text-amber-400 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="size-3.5 text-slate-900 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/programs"
