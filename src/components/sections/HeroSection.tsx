@@ -36,8 +36,8 @@ export function HeroSection() {
               transition={{ delay: 0.1, duration: 0.4 }}
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold text-slate-800 dark:text-slate-200 tracking-wider uppercase mb-6"
             >
-              <span className="size-1.5 rounded-none bg-amber-500 animate-pulse" />
-              <span>{t("badge")}</span>
+              <span className="size-1.5 rounded-none bg-emerald-500 animate-pulse" />
+              <span>Terakreditasi A Nasional</span>
             </motion.div>
 
             {/* High-Impact Headline */}
