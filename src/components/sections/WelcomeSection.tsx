@@ -12,7 +12,7 @@ const fitrahPillars = [
   {
     code: "FITRAH // 01",
     title: "Qudwah Hasanah (Teladan Nyata)",
-    desc: "Setiap ustadz dan ustadzah diposisikan sebagai teladan akhlak hidup yang disaksikan langsung oleh students.",
+    desc: "Setiap ustadz dan ustadzah diposisikan sebagai teladan akhlak hidup yang disaksikan langsung oleh siswa.",
     icon: Sparkles,
   },
   {
@@ -23,8 +23,8 @@ const fitrahPillars = [
   },
   {
     code: "FITRAH // 03",
-    title: "Sinergi School & Keluarga",
-    desc: "Keselarasan pembiasaan harian terpadu melalui mutaba'ah yaumiyah antara teachers dan orang tua.",
+    title: "Sinergi Sekolah & Keluarga",
+    desc: "Keselarasan pembiasaan harian terpadu melalui mutaba'ah yaumiyah antara guru dan orang tua.",
     icon: HeartHandshake,
   },
 ];
@@ -65,7 +65,7 @@ export function WelcomeSection() {
                     Ustadz H. Ahmad Fauzi, M.Pd.
                   </h3>
                   <p className="text-xs font-bold text-amber-700 mt-1 uppercase tracking-wider font-mono">
-                    Kepala School SD Al-Birru
+                    Kepala Sekolah SD Al-Birru
                   </p>
                   <p className="text-xs text-slate-500 mt-0.5 font-mono">
                     Magister Manajemen Pendidikan Islam (UIN)
@@ -79,7 +79,7 @@ export function WelcomeSection() {
                   <div className="mt-6 flex items-center justify-between text-[11px] text-slate-500 font-mono">
                     <div className="flex items-center gap-1.5 text-emerald-700 font-semibold">
                       <ShieldCheck className="size-3.5 text-emerald-700" />
-                      <span>Komitmen School Ramah Anak</span>
+                      <span>Komitmen Sekolah Ramah Anak</span>
                     </div>
                     <span className="text-slate-400">STANDAR JSIT</span>
                   </div>
@@ -101,7 +101,7 @@ export function WelcomeSection() {
               </h2>
 
               <p className="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
-                Anak usia school dasar belajar paling mendalam dari apa yang mereka saksikan dan rasakan.
+                Anak usia sekolah dasar belajar paling mendalam dari apa yang mereka saksikan dan rasakan.
                 Di SD Al-Birru, setiap sudut ruang belajar dirancang untuk menumbuhkan cinta ilmu dan keluhuran pekerti.
               </p>
 
@@ -138,14 +138,14 @@ export function WelcomeSection() {
                   href="/about"
                   className="group inline-flex items-center gap-2 border border-transparent bg-amber-500 text-slate-950 hover:bg-amber-600 font-bold px-6 h-12 rounded-none text-xs sm:text-sm transition-all hover:scale-[1.01] active:scale-[0.99] shadow-2xs"
                 >
-                  <span>Pelajari About &amp; Sejarah Al-Birru</span>
+                  <span>Pelajari Tentang &amp; Sejarah Al-Birru</span>
                   <ArrowRight className="size-3.5 text-slate-900 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/programs"
                   className="inline-flex items-center gap-2 px-5 h-12 rounded-none border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-800 font-bold text-xs sm:text-sm transition-colors shadow-2xs"
                 >
-                  <span>Eksplorasi Curriculum</span>
+                  <span>Eksplorasi Kurikulum</span>
                 </Link>
               </div>
             </ScrollReveal>

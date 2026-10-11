@@ -23,7 +23,7 @@ const programs = [
   {
     code: "PROG // 03",
     title: "Pengembangan Minat & Bakat",
-    desc: "Fasilitas ekstrakurikuler komprehensif mulai dari Coding & Robotik, Panahan, Bela Diri (Pencak Silat), hingga English Club untuk mempersiapkan siswa bersaing di era globalisasi.",
+    desc: "Fasilitas ekstrakurikuler komprehensif mulai dari Pemrograman & Robotika, Panahan, Bela Diri (Pencak Silat), hingga Klub Bahasa Inggris untuk mempersiapkan siswa bersaing di era globalisasi.",
     icon: Target,
     link: "/programs#ekstrakurikuler",
   },

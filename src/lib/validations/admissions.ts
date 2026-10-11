@@ -1,18 +1,18 @@
 import { z } from "zod";
 
 export const AdmissionsSubmissionSchema = z.object({
-  applicantName: z.string().min(3, "Nama siswa terlalu pendek").max(100, "Nama siswa terlalu panjang"),
-  guardianName: z.string().min(3, "Nama wali terlalu pendek").max(100, "Nama wali terlalu panjang"),
-  phoneNumber: z
+  prospectiveStudentName: z.string().min(3, "Nama siswa terlalu pendek").max(255, "Nama siswa terlalu panjang"),
+  prospectiveStudentBirthDate: z.string().refine((date) => !isNaN(Date.parse(date)), {
+    message: "Format tanggal tidak valid",
+  }),
+  guardianContactName: z.string().min(3, "Nama wali terlalu pendek").max(255, "Nama wali terlalu panjang"),
+  guardianContactPhone: z
     .string()
     .min(10, "Nomor telepon tidak valid (minimal 10 digit)")
-    .max(15, "Nomor telepon terlalu panjang")
+    .max(32, "Nomor telepon terlalu panjang")
     .regex(/^[0-9]+$/, "Nomor telepon hanya boleh berisi angka"),
-  previousInstitution: z.string().max(100).optional().or(z.literal("")),
+  guardianContactEmail: z.string().email("Format email tidak valid").max(255),
+  submittedDocumentsUrl: z.string().url().optional(),
 });
 
 export type AdmissionsSubmissionPayload = z.infer<typeof AdmissionsSubmissionSchema>;
-
-export type ActionResponse<T> =
-  | { success: true; data: T; message: string }
-  | { success: false; errors?: Record<string, string[]>; message: string };

@@ -2,192 +2,121 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Compass, Sparkles, ShieldCheck, Award } from "lucide-react";
-import { motion } from "motion/react";
-import { SpotlightCard } from "@/components/common/SpotlightCard";
-import { BorderBeam } from "@/components/common/BorderBeam";
-import { AnimatedCounter } from "@/components/common/AnimatedCounter";
-import { ParallaxFloatingBadge } from "@/components/common/ParallaxFloatingBadge";
-
-import { appleTapHaptic } from "@/lib/motion";
-import { useTranslations } from "next-intl";
+import { Compass, Sparkles, FileText, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export function HeroSection() {
-  const t = useTranslations("Hero");
-
   return (
-    <section aria-labelledby="hero-title" className="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-36 lg:pt-36 lg:pb-44 bg-transparent border-b border-slate-200/70">
-      {/* Removed conflicting background dots to allow GlobalGrid to shine clearly */}
-
+    <section aria-labelledby="hero-title" className="relative overflow-hidden py-16 md:py-24 lg:py-32 bg-transparent border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           {/* Left Column: Industrial Modern Headline & Typography */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="lg:col-span-7 flex flex-col items-start text-left"
-          >
+          <div className="lg:col-span-7 flex flex-col items-start text-start">
             {/* Tagline */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1, duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs text-[11px] font-mono font-bold text-slate-800 dark:text-slate-200 tracking-wider uppercase mb-6"
+            <div
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-none bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 shadow-none text-xs font-semibold text-emerald-700 dark:text-emerald-400 tracking-widest uppercase mb-6"
             >
-              <span className="size-1.5 rounded-none bg-emerald-500 animate-pulse" />
-              <span>Terakreditasi A Nasional</span>
-            </motion.div>
+              <Sparkles aria-hidden="true" className="size-3 text-emerald-500" />
+              <span>Penerimaan Siswa Baru TP 2026/2027 Dibuka</span>
+            </div>
 
             {/* High-Impact Headline */}
-            <motion.h1
+            <h1
               id="hero-title"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15, duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-[58px] font-bold text-slate-950 dark:text-slate-50 tracking-tight leading-[1.12]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-950 dark:text-slate-50 tracking-tight leading-tight uppercase"
             >
-              {t("title1")} <br className="hidden sm:block" /> {t("title2")}
-            </motion.h1>
+              Membentuk Karakter, <br className="hidden sm:block" /> Membina Ilmu, Membangun Integritas.
+            </h1>
 
             {/* Subheading */}
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25, duration: 0.6 }}
-              className="mt-6 text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl font-normal"
-            >
-              {t("description")}
-            </motion.p>
+            <p className="mt-6 text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl font-medium">
+              Sekolah Dasar Al-Birru menyelenggarakan kurikulum dasar nasional terintegrasi nilai Islam di Bandung yang berfokus pada pembiasaan adab disiplin, nalar analitis, dan keunggulan budi pekerti.
+            </p>
 
-            {/* Action Buttons with Concentric Capsule & Apple Spring Haptics */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.5 }}
-              className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto"
-            >
-              <motion.div whileTap={appleTapHaptic}>
-                <Button asChild className="group flex items-center justify-center gap-2.5 bg-linear-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold px-7 h-13 rounded-none text-sm transition-all shadow-md shadow-amber-500/25 relative overflow-hidden">
-                  <Link href="/contact">
-                    <Sparkles className="size-4 group-hover:rotate-12 transition-transform" />
-                    <span>{t("cta_primary")}</span>
-                    <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-              </motion.div>
+            <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+              <Button render={<Link href="/admission" />} nativeButton={false} className="flex items-center justify-center bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-8 h-12 rounded-none text-sm border-0 uppercase tracking-widest shadow-none transition-colors">
+                <span>Daftarkan Siswa Sekarang</span>
+                <ArrowRight className="ml-2 size-4" />
+              </Button>
 
-              <motion.div whileTap={appleTapHaptic}>
-                <Button asChild variant="outline" className="flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-white font-semibold px-6 h-13 rounded-none text-sm transition-all shadow-2xs">
-                  <Link href="/programs">
-                    <BookOpen className="size-4 text-slate-500 dark:text-slate-300" />
-                    <span>{t("cta_secondary")}</span>
-                  </Link>
-                </Button>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+              <Button render={<Link href="/programs" />} nativeButton={false} variant="outline" className="flex items-center justify-center bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-900 dark:text-slate-100 font-bold px-8 h-12 rounded-none text-sm border border-slate-200 dark:border-slate-800 uppercase tracking-widest shadow-none transition-colors">
+                <FileText className="mr-2 size-4" />
+                <span>Unduh Brosur Informasi</span>
+              </Button>
+            </div>
+          </div>
 
-          {/* Right Column: Architectural Blueprint Card with Spotlight & Parallax Floating Chips */}
-          <div className="lg:col-span-5 relative mt-8 lg:mt-0">
+          {/* Right Column: Blueprint Card */}
+          <div className="lg:col-span-5 relative mt-12 lg:mt-0">
+            <Card className="rounded-none border border-slate-200 dark:border-slate-800 shadow-none p-0 overflow-hidden relative bg-white dark:bg-slate-950">
+              <CardContent className="aspect-[4/3] p-6 flex flex-col justify-between relative overflow-hidden">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"
+                />
 
-
-            {/* SaaS Spotlight Card with Sweeping BorderBeam */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
-            >
-              <SpotlightCard className="p-2 shadow-xs hover:shadow-lg transition-all relative rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
-                <BorderBeam size={220} duration={10} colorFrom="#f59e0b" colorTo="#10b981" />
-
-                <div className="aspect-[4/3] rounded-none bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 p-6 flex flex-col justify-between relative overflow-hidden group">
-                  {/* Subtle Blueprint Grid */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"
-                  />
-
-                  <div className="relative z-10 flex items-center justify-between">
-                    <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase font-mono">
-                      Arsitektur Kampus
-                    </span>
-                    <span className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-none border border-emerald-200/60 font-mono">
-                      <span className="size-1.5 rounded-none bg-emerald-500 animate-pulse" />
-                      KAMPUS AKTIF
-                    </span>
-                  </div>
-
-                  <div className="relative z-10 my-auto text-center py-4">
-                    <motion.div
-                      whileHover={{ rotate: 20, scale: 1.05 }}
-                      className="size-13 rounded-none bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs mx-auto flex items-center justify-center text-slate-400 mb-3 transition-transform cursor-pointer"
-                    >
-                      <Compass className="size-6 text-slate-700 dark:text-slate-300" />
-                    </motion.div>
-                    <p className="text-sm font-bold text-slate-900 dark:text-slate-50">
-                      SD Al-Birru Tahfidzul Qur&apos;an
-                    </p>
-                    <address className="text-xs text-slate-500 mt-0.5 font-mono not-italic">
-                      Jl. Selabintana Km. 5, Sukabumi, Jawa Barat
-                    </address>
-                  </div>
-
-                  <div className="relative z-10 pt-3 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-[11px] text-slate-500 font-mono">
-                    <span>Status: Terakreditasi Resmi</span>
-                    <span className="font-semibold text-slate-800 dark:text-slate-200">Academic Year 2026/2027</span>
-                  </div>
+                <div className="relative z-10 flex items-center justify-between">
+                  <span className="text-xs font-bold tracking-widest text-slate-600 dark:text-slate-400 uppercase font-mono">
+                    Metrik Kinerja Operasional Sekolah
+                  </span>
+                  <Badge variant="outline" className="rounded-none border border-emerald-200 dark:border-emerald-900 text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/20 font-mono text-[10px] gap-2 uppercase font-bold px-2 py-0.5 shadow-none">
+                    <span aria-hidden="true" className="size-2 rounded-none bg-emerald-500" />
+                    Peringkat A (Unggul)
+                  </Badge>
                 </div>
-              </SpotlightCard>
-            </motion.div>
+
+                <div className="relative z-10 my-auto text-center py-6">
+                  <div className="size-16 rounded-none bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-900/50 mx-auto flex items-center justify-center mb-4 shadow-none">
+                    <Compass aria-hidden="true" className="size-8 text-amber-600 dark:text-amber-500" />
+                  </div>
+                  <p className="text-base font-bold text-slate-900 dark:text-slate-50 uppercase tracking-tight">
+                    Sekolah Dasar Al-Birru
+                  </p>
+                  <address className="text-sm text-slate-600 dark:text-slate-400 mt-2 font-mono not-italic font-medium">
+                    Status Akreditasi Institusi
+                  </address>
+                </div>
+              </CardContent>
+              
+              <CardFooter className="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-slate-600 dark:text-slate-400 font-mono font-bold uppercase tracking-wider rounded-none">
+                <span>Kepatuhan Presensi Siswa Harian</span>
+                <span className="text-emerald-600 dark:text-emerald-500">98.4% Kehadiran Tepat Waktu</span>
+              </CardFooter>
+            </Card>
           </div>
         </div>
 
         {/* Semantic Definition List for Tabular Metric Pairs (Exposed Grid Style) */}
-        <motion.dl
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 bg-slate-200 dark:bg-slate-800 gap-[1px] border-y border-slate-200 dark:border-slate-800 text-left relative"
-        >
-          <div className="bg-[#FDFDFB] dark:bg-slate-950 p-6 sm:p-8 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors group flex flex-col justify-center">
-            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight group-hover:translate-x-1 transition-transform">
-              <AnimatedCounter value={3} suffix=" Juz" />
+        <dl className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-3 bg-slate-200 dark:bg-slate-800 gap-[1px] border-y border-slate-200 dark:border-slate-800 text-start relative rounded-none">
+          <div className="bg-white dark:bg-slate-950 p-6 sm:p-8 flex flex-col justify-center rounded-none">
+            <dd className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-50 font-mono tracking-tight uppercase">
+              15 : 1
             </dd>
-            <dt className="text-[10px] sm:text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
-              Target Hafalan Mutqin
+            <dt className="text-xs font-bold text-slate-600 dark:text-slate-400 mt-2 uppercase tracking-widest font-mono">
+              Rasio Maksimum Pengajar & Siswa
             </dt>
           </div>
 
-          <div className="bg-[#FDFDFB] dark:bg-slate-950 p-6 sm:p-8 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors group flex flex-col justify-center">
-            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight group-hover:translate-x-1 transition-transform">
-              1 : <AnimatedCounter value={15} />
+          <div className="bg-white dark:bg-slate-950 p-6 sm:p-8 flex flex-col justify-center rounded-none">
+            <dd className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-50 font-mono tracking-tight uppercase">
+              A
             </dd>
-            <dt className="text-[10px] sm:text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
-              Rasio Maksimal Kelas
+            <dt className="text-xs font-bold text-slate-600 dark:text-slate-400 mt-2 uppercase tracking-widest font-mono">
+              Peringkat BAN-S/M
             </dt>
           </div>
 
-          <div className="bg-[#FDFDFB] dark:bg-slate-950 p-6 sm:p-8 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors group flex flex-col justify-center">
-            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight group-hover:translate-x-1 transition-transform">
-              <AnimatedCounter value={100} suffix="%" />
+          <div className="bg-white dark:bg-slate-950 p-6 sm:p-8 flex flex-col justify-center rounded-none sm:col-span-2 md:col-span-1">
+            <dd className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-50 font-mono tracking-tight uppercase">
+              98.4%
             </dd>
-            <dt className="text-[10px] sm:text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
-              Curriculum Merdeka
+            <dt className="text-xs font-bold text-slate-600 dark:text-slate-400 mt-2 uppercase tracking-widest font-mono">
+              Kehadiran Tepat Waktu
             </dt>
           </div>
-
-          <div className="bg-[#FDFDFB] dark:bg-slate-950 p-6 sm:p-8 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors group flex flex-col justify-center">
-            <dd className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 dark:text-slate-50 font-mono tracking-tight group-hover:translate-x-1 transition-transform">
-              <AnimatedCounter value={2} suffix=" Rombel" />
-            </dd>
-            <dt className="text-[10px] sm:text-xs font-semibold text-slate-500 mt-2 uppercase tracking-wider font-mono">
-              Batas Kuota Admissions
-            </dt>
-          </div>
-        </motion.dl>
+        </dl>
       </div>
     </section>
   );

@@ -17,10 +17,10 @@ export interface CTASectionProps {
 }
 
 export function CTASection({
-  kicker = "Penerimaan Students Baru TA 2026/2027",
+  kicker = "Penerimaan Siswa Baru TA 2026/2027",
   title = "Siapkan Fondasi Terbaik untuk Masa Depan Ananda",
-  description = "Kuota dibatasi maksimal 2 kelas (40 students) demi menjamin perhatian personal dan mutu bimbingan tahfidz yang optimal. Konsultasikan minat dan kesiapan ananda bersama tim kami.",
-  primaryBtnText = "Form Konsultasi Admissions",
+  description = "Kuota dibatasi maksimal 2 kelas (40 siswa) demi menjamin perhatian personal dan mutu bimbingan tahfidz yang optimal. Konsultasikan minat dan kesiapan ananda bersama tim kami.",
+  primaryBtnText = "Formulir Konsultasi Pendaftaran",
   primaryBtnHref = "/contact",
 }: CTASectionProps) {
   return (
@@ -58,22 +58,19 @@ export function CTASection({
 
               {/* CTAs with generous touch targets & accessible contrast */}
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                <Button asChild className="w-full sm:w-auto flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 h-13 rounded-none shadow-xs transition-all text-base group">
-                  <Link href={primaryBtnHref}>
-                    <span>{primaryBtnText}</span>
-                    <ArrowRight aria-hidden="true" className="size-4.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                <Button render={<Link href={primaryBtnHref} />} nativeButton={false} className="w-full sm:w-auto flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 h-13 rounded-none shadow-xs transition-all text-base group">
+                  <span>{primaryBtnText}</span>
+                  <ArrowRight aria-hidden="true" className="size-4.5 group-hover:translate-x-1 transition-transform" />
                 </Button>
 
-                <Button asChild variant="outline" className="w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold px-7 h-13 rounded-none transition-all text-base group">
-                  <a
-                    href="https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20SD%20Al-Birru,%20saya%20ingin%20konsultasi%20PPDB%20Tahun%20Ajaran%202026/2027."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageCircle aria-hidden="true" className="size-5 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform" />
-                    <span>Chat WhatsApp School</span>
-                  </a>
+                <Button 
+                  render={<a href="https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20SD%20Al-Birru,%20saya%20ingin%20konsultasi%20PPDB%20Tahun%20Ajaran%202026/2027." target="_blank" rel="noopener noreferrer" />} 
+                  nativeButton={false} 
+                  variant="outline" 
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold px-7 h-13 rounded-none transition-all text-base group"
+                >
+                  <MessageCircle aria-hidden="true" className="size-5 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform" />
+                  <span>Chat WhatsApp Sekolah</span>
                 </Button>
               </div>
 
